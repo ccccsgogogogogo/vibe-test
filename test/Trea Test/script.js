@@ -4,8 +4,138 @@ document.addEventListener('DOMContentLoaded', () => {
     const messageList = document.getElementById('messageList');
     const chatContainer = document.getElementById('chatContainer');
     const welcomeMsg = document.getElementById('welcomeMsg');
+    const conversationList = document.querySelector('.conversation-list');
 
     const REPLY_TEXT = '我是凑企鹅';
+    let conversations = [];
+    let currentConvId = null;
+
+    const createConversation = () => {
+        return {
+            id: Date.now(),
+            title: '新对话',
+            messages: []
+        };
+    };
+
+    const saveCurrentConversation = () => {
+        if (!currentConvId) return;
+        const conv = conversations.find(c => c.id === currentConvId);
+        if (!conv) return;
+        conv.messages = [];
+        messageList.querySelectorAll('.message').forEach(msg => {
+            const isUser = msg.classList.contains('user-message');
+            const bubble = msg.querySelector('.message-bubble');
+            if (bubble) {
+                conv.messages.push({
+                    sender: isUser ? 'user' : 'assistant',
+                    text: bubble.textContent
+                });
+            }
+        });
+        const firstUserMsg = conv.messages.find(m => m.sender === 'user');
+        if (firstUserMsg) {
+            conv.title = firstUserMsg.text.length > 12 ? firstUserMsg.text.slice(0, 12) + '...' : firstUserMsg.text;
+        }
+    };
+
+    const renderConversationList = () => {
+        const existingItems = conversationList.querySelectorAll('.conversation');
+        existingItems.forEach(item => item.remove());
+
+        conversations.slice().reverse().forEach(conv => {
+            const convDiv = document.createElement('div');
+            convDiv.className = 'conversation' + (conv.id === currentConvId ? ' active' : '');
+            convDiv.dataset.id = conv.id;
+
+            const iconDiv = document.createElement('div');
+            iconDiv.className = 'conv-icon';
+            iconDiv.textContent = '💬';
+
+            const infoDiv = document.createElement('div');
+            infoDiv.className = 'conv-info';
+
+            const titleDiv = document.createElement('div');
+            titleDiv.className = 'conv-title';
+            titleDiv.textContent = conv.title;
+
+            const previewDiv = document.createElement('div');
+            previewDiv.className = 'conv-preview';
+            const lastMsg = conv.messages[conv.messages.length - 1];
+            previewDiv.textContent = lastMsg ? lastMsg.text : '暂无消息';
+
+            const deleteBtn = document.createElement('button');
+            deleteBtn.className = 'conv-delete-btn';
+            deleteBtn.textContent = '✕';
+            deleteBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                deleteConversation(conv.id);
+            });
+
+            infoDiv.appendChild(titleDiv);
+            infoDiv.appendChild(previewDiv);
+            convDiv.appendChild(iconDiv);
+            convDiv.appendChild(infoDiv);
+            convDiv.appendChild(deleteBtn);
+
+            convDiv.addEventListener('click', () => {
+                switchConversation(conv.id);
+            });
+
+            conversationList.appendChild(convDiv);
+        });
+    };
+
+    const deleteConversation = (convId) => {
+        const index = conversations.findIndex(c => c.id === convId);
+        if (index === -1) return;
+        conversations.splice(index, 1);
+
+        if (convId === currentConvId) {
+            if (conversations.length === 0) {
+                const newConv = createConversation();
+                conversations.push(newConv);
+                currentConvId = newConv.id;
+                messageList.innerHTML = '';
+                if (welcomeMsg) welcomeMsg.style.display = '';
+            } else {
+                const lastConv = conversations[conversations.length - 1];
+                currentConvId = lastConv.id;
+                messageList.innerHTML = '';
+                if (lastConv.messages.length === 0) {
+                    if (welcomeMsg) welcomeMsg.style.display = '';
+                } else {
+                    if (welcomeMsg) welcomeMsg.style.display = 'none';
+                    lastConv.messages.forEach(msg => {
+                        const el = createMessageElement(msg.text, msg.sender);
+                        messageList.appendChild(el);
+                    });
+                }
+                scrollToBottom();
+            }
+        }
+        renderConversationList();
+    };
+
+    const switchConversation = (convId) => {
+        saveCurrentConversation();
+        currentConvId = convId;
+        const conv = conversations.find(c => c.id === convId);
+        if (!conv) return;
+
+        messageList.innerHTML = '';
+        if (conv.messages.length === 0) {
+            if (welcomeMsg) welcomeMsg.style.display = '';
+        } else {
+            if (welcomeMsg) welcomeMsg.style.display = 'none';
+            conv.messages.forEach(msg => {
+                const el = createMessageElement(msg.text, msg.sender);
+                messageList.appendChild(el);
+            });
+        }
+        scrollToBottom();
+        renderConversationList();
+    };
 
     const sendMessage = () => {
         const messageText = messageInput.value.trim();
@@ -19,18 +149,20 @@ document.addEventListener('DOMContentLoaded', () => {
         messageList.appendChild(userMessage);
         messageInput.value = '';
         messageInput.style.height = 'auto';
+
+        const assistantMessage = createMessageElement(REPLY_TEXT, 'assistant');
+        messageList.appendChild(assistantMessage);
         scrollToBottom();
 
-        const typingMessage = createTypingIndicator();
-        messageList.appendChild(typingMessage);
-        scrollToBottom();
-
-        setTimeout(() => {
-            messageList.removeChild(typingMessage);
-            const assistantMessage = createMessageElement(REPLY_TEXT, 'assistant');
-            messageList.appendChild(assistantMessage);
-            scrollToBottom();
-        }, 800 + Math.random() * 600);
+        const conv = conversations.find(c => c.id === currentConvId);
+        if (conv) {
+            conv.messages.push({ sender: 'user', text: messageText });
+            conv.messages.push({ sender: 'assistant', text: REPLY_TEXT });
+            if (conv.title === '新对话') {
+                conv.title = messageText.length > 12 ? messageText.slice(0, 12) + '...' : messageText;
+            }
+            renderConversationList();
+        }
     };
 
     const createMessageElement = (text, sender) => {
@@ -54,33 +186,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         contentDiv.appendChild(bubbleDiv);
         contentDiv.appendChild(timeDiv);
-
-        messageDiv.appendChild(avatarDiv);
-        messageDiv.appendChild(contentDiv);
-
-        return messageDiv;
-    };
-
-    const createTypingIndicator = () => {
-        const messageDiv = document.createElement('div');
-        messageDiv.className = 'message assistant-message';
-
-        const avatarDiv = document.createElement('div');
-        avatarDiv.className = 'avatar assistant-avatar';
-        avatarDiv.textContent = '🐧';
-
-        const contentDiv = document.createElement('div');
-        contentDiv.className = 'message-content';
-
-        const bubbleDiv = document.createElement('div');
-        bubbleDiv.className = 'message-bubble';
-
-        const typingDiv = document.createElement('div');
-        typingDiv.className = 'typing-indicator';
-        typingDiv.innerHTML = '<span></span><span></span><span></span>';
-
-        bubbleDiv.appendChild(typingDiv);
-        contentDiv.appendChild(bubbleDiv);
 
         messageDiv.appendChild(avatarDiv);
         messageDiv.appendChild(contentDiv);
@@ -117,9 +222,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const newChatBtn = document.querySelector('.new-chat-btn');
     newChatBtn.addEventListener('click', () => {
+        saveCurrentConversation();
+        const newConv = createConversation();
+        conversations.push(newConv);
+        currentConvId = newConv.id;
         messageList.innerHTML = '';
-        if (welcomeMsg) {
-            welcomeMsg.style.display = '';
-        }
+        if (welcomeMsg) welcomeMsg.style.display = '';
+        renderConversationList();
     });
+
+    const initConv = createConversation();
+    conversations.push(initConv);
+    currentConvId = initConv.id;
+    renderConversationList();
 });
