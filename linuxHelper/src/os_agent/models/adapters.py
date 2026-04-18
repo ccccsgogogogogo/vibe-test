@@ -32,6 +32,14 @@ class HTTPStreamingModelClient(StreamingModelClient):
             "stream": True,
         }
 
+    def build_request_url(self) -> str:
+        """构造最终请求地址；若仅提供基地址则自动补全 chat/completions。"""
+
+        url = self.base_url.rstrip("/")
+        if url.endswith("/chat/completions"):
+            return url
+        return f"{url}/chat/completions"
+
     def stream_chat(self, messages: List[Dict[str, str]]) -> Iterable[str]:
         """发送流式请求并逐行解析 SSE 数据。"""
 
@@ -54,7 +62,7 @@ class HTTPStreamingModelClient(StreamingModelClient):
         }
 
         with requests.post(
-            self.base_url,
+            self.build_request_url(),
             headers=req_headers,
             data=json.dumps(self.build_payload(messages)),
             stream=True,
@@ -70,6 +78,31 @@ class HTTPStreamingModelClient(StreamingModelClient):
                     text = text[5:].strip()
                 if text == "[DONE]":
                     break
+
+                # 提取标准流式协议中的 delta.content，避免把整段 JSON 元数据显示到界面。
+                if text.startswith("{"):
+                    try:
+                        payload = json.loads(text)
+                    except json.JSONDecodeError:
+                        yield text
+                        continue
+
+                    choices = payload.get("choices") or []
+                    if not choices:
+                        continue
+
+                    delta = choices[0].get("delta") or {}
+                    content = delta.get("content")
+
+                    if isinstance(content, str) and content:
+                        yield content
+                    elif isinstance(content, list):
+                        # 兼容部分模型返回的分段结构。
+                        for part in content:
+                            if isinstance(part, dict) and isinstance(part.get("text"), str):
+                                yield part["text"]
+                    continue
+
                 yield text
 
 

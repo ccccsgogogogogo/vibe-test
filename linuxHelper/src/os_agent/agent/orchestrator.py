@@ -102,7 +102,8 @@ class Orchestrator:
         for chunk in self.model.stream_chat(summary_prompt):
             chunks.append(chunk)
 
-        assistant_text = "\n".join(chunks).strip() or self._fallback_summary(execution)
+        # 流式分片是逐 token 返回，使用连续拼接避免每片单独换行。
+        assistant_text = "".join(chunks).strip() or self._fallback_summary(execution)
 
         return TurnResult(
             user_text=user_text,
