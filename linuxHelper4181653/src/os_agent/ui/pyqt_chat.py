@@ -65,11 +65,17 @@ class ChatWindow(QMainWindow):
         self.new_chat_button.setObjectName("newChatButton")
         self.new_chat_button.clicked.connect(self._on_new_chat)
 
+        self.delete_chat_button = QPushButton("删除对话")
+        self.delete_chat_button.setObjectName("deleteChatButton")
+        self.delete_chat_button.clicked.connect(self._on_delete_chat)
+        self.delete_chat_button.setEnabled(False)  # Initially disabled since only one session
+
         self.session_list = QListWidget()
         self.session_list.setObjectName("sessionList")
         first_item = QListWidgetItem("新对话\n暂无消息")
         self.session_list.addItem(first_item)
         self.session_list.setCurrentRow(0)
+        self.session_list.itemSelectionChanged.connect(self._on_session_selection_changed)
 
         user_card = QFrame()
         user_card.setObjectName("userCard")
@@ -81,6 +87,7 @@ class ChatWindow(QMainWindow):
 
         sidebar_layout.addWidget(brand)
         sidebar_layout.addWidget(self.new_chat_button)
+        sidebar_layout.addWidget(self.delete_chat_button)
         sidebar_layout.addWidget(self.session_list, 1)
         sidebar_layout.addWidget(user_card)
 
@@ -206,6 +213,50 @@ class ChatWindow(QMainWindow):
         self.chat_view.clear()
         self.content_stack.setCurrentIndex(0)
 
+        # 更新删除按钮状态
+        self._on_session_selection_changed()
+
+    def _on_session_selection_changed(self) -> None:
+        """当会话选择改变时，更新删除按钮状态。"""
+        self.delete_chat_button.setEnabled(self.session_list.count() > 1)
+
+    def _on_delete_chat(self) -> None:
+        """删除当前选中的会话。"""
+        current_row = self.session_list.currentRow()
+        if current_row < 0 or self.session_list.count() <= 1:
+            return
+
+        # 确认删除
+        reply = QMessageBox.question(
+            self,
+            "确认删除",
+            "确定要删除这个对话吗？",
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+            QMessageBox.StandardButton.No,
+        )
+        if reply != QMessageBox.StandardButton.Yes:
+            return
+
+        # 删除项目
+        item = self.session_list.takeItem(current_row)
+        del item
+
+        # 如果删除了最后一个，调整索引
+        if current_row >= self.session_list.count():
+            current_row = self.session_list.count() - 1
+
+        self.session_list.setCurrentRow(current_row)
+
+        # 重置聊天状态
+        self.pending_confirmation_text = None
+        self.confirm_button.setEnabled(False)
+        self.confirm_button.setVisible(False)
+        self.chat_view.clear()
+        self.content_stack.setCurrentIndex(0)  # 回到欢迎页
+
+        # 更新删除按钮状态
+        self._on_session_selection_changed()
+
     def _ensure_chat_mode(self) -> None:
         """保证内容区切换到聊天页。"""
 
@@ -302,6 +353,9 @@ def run_app() -> None:
         "#brand{font-size:18px;font-weight:700;color:#0f766e;padding:4px 6px;}"
         "#newChatButton{background:#ffffff;color:#1f2937;border:1px solid #e5e7eb;border-radius:10px;"
         "padding:10px;text-align:left;font-size:13px;}"
+        "#deleteChatButton{background:#ff6b6b;color:#ffffff;border:1px solid #e5e7eb;border-radius:10px;"
+        "padding:10px;text-align:left;font-size:13px;}"
+        "#deleteChatButton:disabled{background:#cccccc;color:#666666;}"
         "#sessionList{background:#f7f7f8;border:none;outline:none;font-size:12px;}"
         "#sessionList::item{background:#ffffff;border:1px solid #eef0f3;border-radius:10px;padding:9px;margin:4px 0;}"
         "#sessionList::item:selected{background:#e8f4ff;border:1px solid #bfdbfe;color:#0f172a;}"
