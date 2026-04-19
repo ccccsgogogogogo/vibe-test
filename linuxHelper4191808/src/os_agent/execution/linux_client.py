@@ -7,6 +7,7 @@ from typing import Optional
 import paramiko
 
 from os_agent.config import SSHConfig
+from os_agent.logging_config import get_logger, log_connection, log_command_execution
 
 
 @dataclass
@@ -42,19 +43,41 @@ class LinuxCommandExecutor:
     def _run_local(self, command: str, timeout: int) -> LinuxCommandResult:
         """本地 shell 执行命令。"""
 
-        proc = subprocess.run(
-            command,
-            shell=True,
-            capture_output=True,
-            text=True,
-            timeout=timeout,
-        )
-        return LinuxCommandResult(
-            command=command,
-            return_code=proc.returncode,
-            stdout=proc.stdout,
-            stderr=proc.stderr,
-        )
+        try:
+            proc = subprocess.run(
+                command,
+                shell=True,
+                capture_output=True,
+                text=True,
+                timeout=timeout,
+            )
+            result = LinuxCommandResult(
+                command=command,
+                return_code=proc.returncode,
+                stdout=proc.stdout,
+                stderr=proc.stderr,
+            )
+            
+            # 记录命令执行日志
+            log_command_execution(
+                command=command,
+                return_code=proc.returncode,
+                stderr=proc.stderr,
+                is_remote=False,
+            )
+            
+            return result
+        except subprocess.TimeoutExpired as e:
+            get_logger().error(
+                f"本地命令执行超时: {command}, 超时时间: {timeout}s"
+            )
+            raise
+        except Exception as e:
+            get_logger().error(
+                f"本地命令执行异常: {command}, 错误: {str(e)}",
+                exc_info=True
+            )
+            raise
 
     def _run_remote(self, command: str, timeout: int) -> LinuxCommandResult:
         """通过 Paramiko 在远端主机执行命令。"""
@@ -75,18 +98,62 @@ class LinuxCommandExecutor:
         else:
             connect_args["password"] = self.ssh.password
 
-        client.connect(**connect_args)
         try:
-            stdin, stdout, stderr = client.exec_command(command, timeout=timeout)
-            _ = stdin
-            out_text = stdout.read().decode("utf-8", errors="replace")
-            err_text = stderr.read().decode("utf-8", errors="replace")
-            return_code = stdout.channel.recv_exit_status()
-            return LinuxCommandResult(
-                command=command,
-                return_code=return_code,
-                stdout=out_text,
-                stderr=err_text,
+            # 连接远程主机
+            client.connect(**connect_args)
+            log_connection(
+                host=self.ssh.host,
+                port=self.ssh.port,
+                username=self.ssh.username,
+                success=True,
             )
+            
+            try:
+                stdin, stdout, stderr = client.exec_command(command, timeout=timeout)
+                _ = stdin
+                out_text = stdout.read().decode("utf-8", errors="replace")
+                err_text = stderr.read().decode("utf-8", errors="replace")
+                return_code = stdout.channel.recv_exit_status()
+                
+                result = LinuxCommandResult(
+                    command=command,
+                    return_code=return_code,
+                    stdout=out_text,
+                    stderr=err_text,
+                )
+                
+                # 记录远程命令执行日志
+                log_command_execution(
+                    command=command,
+                    return_code=return_code,
+                    stderr=err_text,
+                    is_remote=True,
+                )
+                
+                return result
+            except Exception as e:
+                get_logger().error(
+                    f"远程命令执行异常: {command}, 错误: {str(e)}",
+                    exc_info=True
+                )
+                raise
+        except (paramiko.AuthenticationException, paramiko.SSHException) as e:
+            log_connection(
+                host=self.ssh.host,
+                port=self.ssh.port,
+                username=self.ssh.username,
+                success=False,
+            )
+            get_logger().error(
+                f"远程连接失败: {self.ssh.host}:{self.ssh.port} - {str(e)}",
+                exc_info=True
+            )
+            raise
+        except Exception as e:
+            get_logger().error(
+                f"远程连接异常: {self.ssh.host}:{self.ssh.port} - {str(e)}",
+                exc_info=True
+            )
+            raise
         finally:
             client.close()

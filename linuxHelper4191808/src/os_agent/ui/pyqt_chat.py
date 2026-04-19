@@ -13,7 +13,7 @@ import os
 import re
 import sys
 
-from PyQt6.QtCore import Qt
+from PyQt6.QtCore import QObject, Qt, QThread, QTimer, pyqtSignal
 from PyQt6.QtWidgets import (
     QApplication,
     QFrame,
@@ -26,14 +26,38 @@ from PyQt6.QtWidgets import (
     QMainWindow,
     QMessageBox,
     QPushButton,
+    QScrollArea,
     QStackedWidget,
-    QTextEdit,
     QVBoxLayout,
     QWidget,
 )
 
 from os_agent.agent import Orchestrator
 from os_agent.config import load_config
+from os_agent.logging_config import get_logger, log_connection
+
+
+class TurnWorker(QObject):
+    """后台工作对象：在子线程中执行一轮请求处理。"""
+
+    finished = pyqtSignal(object, str, bool)
+    failed = pyqtSignal(str, str, bool)
+    done = pyqtSignal()
+
+    def __init__(self, orchestrator: Orchestrator, text: str, confirmed: bool) -> None:
+        super().__init__()
+        self.orchestrator = orchestrator
+        self.text = text
+        self.confirmed = confirmed
+
+    def run(self) -> None:
+        try:
+            turn = self.orchestrator.handle_turn(self.text, confirmed=self.confirmed)
+            self.finished.emit(turn, self.text, self.confirmed)
+        except Exception as exc:  # noqa: BLE001
+            self.failed.emit(str(exc), self.text, self.confirmed)
+        finally:
+            self.done.emit()
 
 
 class ChatWindow(QMainWindow):
@@ -64,8 +88,23 @@ class ChatWindow(QMainWindow):
         self.cfg = load_config()  # 加载配置文件
         self.orchestrator = Orchestrator(self.cfg)  # 初始化编排器
         self.pending_confirmation_text: str | None = None  # 待确认的文本
+        self.is_processing = False  # 是否正在后台处理中
         self.session_index = 1  # 会话索引计数器
-        self.session_histories: list[list[str]] = [[]]  # 存储每个会话的聊天历史HTML
+        self.session_histories: list[list[dict[str, str]]] = [[]]  # 存储每个会话的结构化消息
+        self.turn_thread: QThread | None = None
+        self.turn_worker: TurnWorker | None = None
+        self._last_connection_state: bool | None = None
+        self._skip_connection_check_logged = False
+
+        # 连接状态管理
+        self.is_remote_connected = False
+        self.connection_status_label: QLabel | None = None
+        self.connection_indicator: QFrame | None = None
+        
+        # 定时器：每2秒检查连接状态
+        self.connection_check_timer = QTimer()
+        self.connection_check_timer.timeout.connect(self._check_connection_status)
+        self.connection_check_timer.start(2000)
 
         # 设置对话保存文件路径
         self.conversations_file = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'conversations.json')
@@ -82,6 +121,11 @@ class ChatWindow(QMainWindow):
 
         # 加载现有对话
         self._load_conversations()
+        
+        # 应用启动时立刻检查连接状态
+        self._check_connection_status()
+
+        get_logger().info("聊天窗口初始化完成")
 
     def _load_conversations(self) -> None:
         """
@@ -99,19 +143,25 @@ class ChatWindow(QMainWindow):
                 conversations = data.get('conversations', [])
                 if conversations:
                     # 恢复会话历史列表
-                    self.session_histories = [conv['messages'] for conv in conversations]
+                    self.session_histories = [
+                        [self._normalize_message_payload(msg) for msg in conv.get('messages', [])]
+                        for conv in conversations
+                    ]
                     self.session_list.clear()
 
                     # 重新创建会话列表项，包含消息预览
                     for conv in conversations:
                         name = conv['name']
-                        messages = conv['messages']
+                        messages = conv.get('messages', [])
 
                         # 生成消息预览文本
                         if messages:
-                            # 提取最后一条消息的纯文本内容
+                            # 提取最后一条消息的纯文本内容（兼容字符串HTML和字典消息）
                             last_msg = messages[-1]
-                            clean_text = re.sub(r'<[^>]+>', '', last_msg)  # 移除HTML标签
+                            if isinstance(last_msg, dict):
+                                clean_text = str(last_msg.get('text', ''))
+                            else:
+                                clean_text = re.sub(r'<[^>]+>', '', str(last_msg))
                             if len(clean_text) > 20:
                                 clean_text = clean_text[:20] + "..."
                             display_text = f"{name}\n{clean_text}"
@@ -125,15 +175,18 @@ class ChatWindow(QMainWindow):
                     self.session_index = len(conversations)
                     self.session_list.setCurrentRow(0)
                     self._on_session_selection_changed()
+                    get_logger().info("成功加载 %d 个对话会话", len(conversations))
                 else:
                     # 文件存在但为空，使用默认对话
                     self._initialize_default_conversation()
+                    get_logger().info("对话历史为空，已初始化默认会话")
             except (json.JSONDecodeError, KeyError) as e:
-                print(f"加载对话失败: {e}")
+                get_logger().error("加载对话失败: %s", str(e), exc_info=True)
                 self._initialize_default_conversation()
         else:
             # 文件不存在，使用默认对话
             self._initialize_default_conversation()
+            get_logger().info("未发现对话历史文件，已初始化默认会话")
 
     def _initialize_default_conversation(self) -> None:
         """
@@ -195,6 +248,31 @@ class ChatWindow(QMainWindow):
         brand = QLabel("凌企鹅")
         brand.setObjectName("brand")
 
+        # 品牌标识与连接状态容器
+        brand_container = QHBoxLayout()
+        brand_container.setContentsMargins(0, 0, 0, 0)
+        brand_container.setSpacing(8)
+        brand_container.addWidget(brand)
+        
+        # 连接状态指示器
+        self.connection_indicator = QFrame()
+        self.connection_indicator.setFixedSize(12, 12)
+        self.connection_indicator.setStyleSheet(
+            "QFrame { background-color: #ef4444; border-radius: 6px; }"
+        )
+        brand_container.addWidget(self.connection_indicator)
+        
+        # 连接状态文字
+        self.connection_status_label = QLabel("未连接")
+        self.connection_status_label.setStyleSheet(
+            "color: #ef4444; font-size: 11px; font-weight: bold;"
+        )
+        brand_container.addWidget(self.connection_status_label)
+        brand_container.addStretch(1)
+        
+        # 将品牌容器添加到sidebar
+        sidebar_layout.addLayout(brand_container)
+
         # 新建对话按钮
         self.new_chat_button = QPushButton("+ 新对话")
         self.new_chat_button.setObjectName("newChatButton")
@@ -230,7 +308,6 @@ class ChatWindow(QMainWindow):
         user_layout.addWidget(QLabel("凌企鹅 v1.0"))
 
         # 添加所有组件到侧边栏布局
-        sidebar_layout.addWidget(brand)
         sidebar_layout.addWidget(self.new_chat_button)
         sidebar_layout.addWidget(self.delete_chat_button)
         sidebar_layout.addWidget(self.rename_chat_button)
@@ -268,11 +345,25 @@ class ChatWindow(QMainWindow):
         self.content_stack.addWidget(self._build_welcome_view())  # 索引0：欢迎页
 
         # 聊天视图
-        self.chat_view = QTextEdit()
-        self.chat_view.setObjectName("chatView")
-        self.chat_view.setReadOnly(True)
-        self.chat_view.setPlaceholderText("对话开始后会显示在这里")
-        self.content_stack.addWidget(self.chat_view)  # 索引1：聊天页
+        self.chat_scroll = QScrollArea()
+        self.chat_scroll.setObjectName("chatView")
+        self.chat_scroll.setWidgetResizable(True)
+        self.chat_scroll.setFrameShape(QFrame.Shape.NoFrame)
+        self.chat_scroll.setStyleSheet(
+            "QScrollArea { background:#ededf0; border:none; }"
+            "QScrollArea > QWidget > QWidget { background:#ededf0; }"
+        )
+
+        self.chat_container = QWidget()
+        self.chat_container.setObjectName("chatContent")
+        self.chat_container.setStyleSheet("background:#ededf0;")
+        self.chat_layout = QVBoxLayout(self.chat_container)
+        self.chat_layout.setContentsMargins(8, 8, 8, 8)
+        self.chat_layout.setSpacing(8)
+        self.chat_layout.setAlignment(Qt.AlignmentFlag.AlignTop)
+        self.chat_scroll.setWidget(self.chat_container)
+
+        self.content_stack.addWidget(self.chat_scroll)  # 索引1：聊天页
 
         # 底部输入区域
         composer = QFrame()
@@ -409,7 +500,7 @@ class ChatWindow(QMainWindow):
         self.pending_confirmation_text = None
         self.confirm_button.setEnabled(False)
         self.confirm_button.setVisible(False)
-        self.chat_view.clear()
+        self._clear_chat_messages()
         self.content_stack.setCurrentIndex(0)  # 切换到欢迎页
 
         # 更新按钮状态
@@ -435,9 +526,12 @@ class ChatWindow(QMainWindow):
         current_row = self.session_list.currentRow()
         if current_row < len(self.session_histories):
             # 清空并重新加载消息
-            self.chat_view.clear()
+            self._clear_chat_messages()
             for message in self.session_histories[current_row]:
-                self.chat_view.append(message)
+                self._append_message_widget(
+                    message.get("role", "Assistant"),
+                    message.get("text", ""),
+                )
 
             # 根据是否有历史消息切换页面
             if self.session_histories[current_row]:
@@ -524,7 +618,7 @@ class ChatWindow(QMainWindow):
         self.pending_confirmation_text = None
         self.confirm_button.setEnabled(False)
         self.confirm_button.setVisible(False)
-        self.chat_view.clear()
+        self._clear_chat_messages()
         self.content_stack.setCurrentIndex(0)  # 回到欢迎页
 
         # 更新按钮状态
@@ -543,6 +637,81 @@ class ChatWindow(QMainWindow):
         if self.content_stack.currentIndex() != 1:
             self.content_stack.setCurrentIndex(1)
 
+    def _normalize_message_payload(self, message: object) -> dict[str, str]:
+        """将历史消息标准化为结构化 payload。"""
+        if isinstance(message, dict):
+            role = str(message.get("role", "Assistant"))
+            text = str(message.get("text", ""))
+            if role not in {"User", "Assistant", "System"}:
+                role = "Assistant"
+            return {"role": role, "text": text}
+
+        raw = str(message)
+        if "text-align:right" in raw:
+            role = "User"
+        elif "System:" in raw or "fef" in raw.lower():
+            role = "System"
+        else:
+            role = "Assistant"
+
+        plain = re.sub(r"<br\s*/?>", "\n", raw, flags=re.IGNORECASE)
+        plain = re.sub(r"<[^>]+>", "", plain)
+        return {"role": role, "text": plain.strip()}
+
+    def _clear_chat_messages(self) -> None:
+        """清空聊天区所有气泡组件。"""
+        while self.chat_layout.count():
+            item = self.chat_layout.takeAt(0)
+            widget = item.widget()
+            child_layout = item.layout()
+            if widget is not None:
+                widget.deleteLater()
+            elif child_layout is not None:
+                while child_layout.count():
+                    child = child_layout.takeAt(0)
+                    if child.widget() is not None:
+                        child.widget().deleteLater()
+
+    def _append_message_widget(self, role: str, text: str) -> None:
+        """向聊天区追加一条左右分栏圆角气泡消息。"""
+        row = QHBoxLayout()
+        row.setContentsMargins(0, 2, 0, 2)
+
+        bubble = QLabel(text)
+        bubble.setWordWrap(True)
+        bubble.setTextInteractionFlags(Qt.TextInteractionFlag.TextSelectableByMouse)
+        bubble.setMaximumWidth(900)
+
+        if role == "User":
+            bubble.setStyleSheet(
+                "background:#dbeafe;color:#0f172a;border-radius:16px;"
+                "padding:14px 18px;font-size:18px;font-weight:500;"
+            )
+            row.addStretch(1)
+            row.addWidget(bubble)
+        elif role == "System":
+            bubble.setStyleSheet(
+                "background:#fef9c3;color:#111827;border:1px solid #fde68a;border-radius:16px;"
+                "padding:14px 18px;font-size:18px;font-weight:500;"
+            )
+            row.addWidget(bubble)
+            row.addStretch(1)
+        else:
+            bubble.setStyleSheet(
+                "background:#ffffff;color:#111827;border:1px solid #e5e7eb;border-radius:16px;"
+                "padding:14px 18px;font-size:18px;font-weight:500;"
+            )
+            row.addWidget(bubble)
+            row.addStretch(1)
+
+        self.chat_layout.addLayout(row)
+        QTimer.singleShot(
+            0,
+            lambda: self.chat_scroll.verticalScrollBar().setValue(
+                self.chat_scroll.verticalScrollBar().maximum()
+            ),
+        )
+
     def _append(self, role: str, text: str) -> None:
         """
         Append a message bubble to the chat view and session history.
@@ -560,39 +729,92 @@ class ChatWindow(QMainWindow):
         if current_row < 0:
             current_row = 0
 
-        # 根据角色生成不同的消息气泡HTML
-        if role == "User":
-            message_html = (
-                f"<div style='margin:10px 0;text-align:right;'>"
-                f"<span style='display:inline-block;max-width:72%;background:#dcfce7;color:#111827;"
-                f"padding:9px 12px;border-radius:12px;'>{text}</span></div>"
-            )
-        else:
-            # 设置不同系统消息的背景色
-            bubble_color = "#f3f4f6"
-            if role == "System":
-                bubble_color = "#fef3c7"
-
-            # 转义换行符为HTML
-            safe_text = text.replace("\n", "<br>")
-            message_html = (
-                f"<div style='margin:10px 0;text-align:left;'>"
-                f"<span style='display:inline-block;max-width:78%;background:{bubble_color};"
-                f"color:#111827;padding:9px 12px;border-radius:12px;'><b>{role}:</b> {safe_text}</span></div>"
-            )
+        message_payload = {"role": role, "text": text}
 
         # 确保历史记录列表足够长
         while len(self.session_histories) <= current_row:
             self.session_histories.append([])
 
         # 添加到当前会话的历史记录
-        self.session_histories[current_row].append(message_html)
+        self.session_histories[current_row].append(message_payload)
 
         # 在聊天视图中显示消息
-        self.chat_view.append(message_html)
+        self._append_message_widget(role, text)
 
         # 保存对话列表
         self._save_conversations()
+
+    def _set_processing_state(self, processing: bool) -> None:
+        """设置UI忙碌态，避免请求处理中重复触发操作。"""
+        self.is_processing = processing
+        self.input.setEnabled(not processing)
+        self.send_button.setEnabled(not processing)
+        self.new_chat_button.setEnabled(not processing)
+        self.delete_chat_button.setEnabled((not processing) and self.session_list.count() > 1)
+        self.rename_chat_button.setEnabled(not processing)
+        self.session_list.setEnabled(not processing)
+
+    def _start_turn_processing(self, text: str, confirmed: bool) -> None:
+        """在后台线程中启动一次请求处理。"""
+        if self.is_processing:
+            return
+
+        self._set_processing_state(True)
+        get_logger().info("开始后台处理请求: confirmed=%s", str(confirmed))
+
+        thread = QThread(self)
+        worker = TurnWorker(self.orchestrator, text, confirmed)
+        worker.moveToThread(thread)
+
+        thread.started.connect(worker.run)
+        worker.finished.connect(self._on_turn_finished)
+        worker.failed.connect(self._on_turn_failed)
+        worker.done.connect(thread.quit)
+        worker.done.connect(worker.deleteLater)
+
+        def _cleanup_thread() -> None:
+            self.turn_thread = None
+            self.turn_worker = None
+
+        thread.finished.connect(thread.deleteLater)
+        thread.finished.connect(_cleanup_thread)
+
+        self.turn_thread = thread
+        self.turn_worker = worker
+        thread.start()
+
+    def _on_turn_finished(self, turn: object, text: str, confirmed: bool) -> None:
+        """处理后台请求成功结果并更新UI。"""
+        _ = text
+        get_logger().info("后台处理完成: confirmed=%s", str(confirmed))
+        self._append("Assistant", turn.assistant_text)
+
+        need_confirm = (
+            (not confirmed)
+            and turn.execution is None
+            and not turn.risk.blocked
+            and (
+                turn.risk.requires_confirmation
+                or "confirm" in turn.assistant_text.lower()
+                or "确认" in turn.assistant_text
+            )
+        )
+
+        if need_confirm:
+            self.pending_confirmation_text = text
+            self.confirm_button.setEnabled(True)
+            self.confirm_button.setVisible(True)
+        else:
+            self.confirm_button.setEnabled(False)
+            self.confirm_button.setVisible(False)
+
+        self._set_processing_state(False)
+
+    def _on_turn_failed(self, error_message: str, _text: str, _confirmed: bool) -> None:
+        """处理后台请求异常并恢复UI状态。"""
+        get_logger().error("后台处理失败: %s", error_message)
+        QMessageBox.critical(self, "Error", error_message)
+        self._set_processing_state(False)
 
     def _on_send(self) -> None:
         """
@@ -604,37 +826,12 @@ class ChatWindow(QMainWindow):
         """
 
         text = self.input.text().strip()
-        if not text:
+        if not text or self.is_processing:
             return
 
         self.input.clear()
         self._append("User", text)
-
-        try:
-            turn = self.orchestrator.handle_turn(text, confirmed=False)
-        except Exception as exc:  # noqa: BLE001
-            QMessageBox.critical(self, "Error", str(exc))
-            return
-
-        self._append("Assistant", turn.assistant_text)
-
-        need_confirm = (
-            turn.execution is None
-            and not turn.risk.blocked
-            and (
-                turn.risk.requires_confirmation
-                or "confirm" in turn.assistant_text.lower()
-                or "确认" in turn.assistant_text
-            )
-        )
-        if need_confirm:
-            self.pending_confirmation_text = text
-            self.confirm_button.setEnabled(True)
-            self.confirm_button.setVisible(True)
-            return
-
-        self.confirm_button.setEnabled(False)
-        self.confirm_button.setVisible(False)
+        self._start_turn_processing(text, confirmed=False)
 
     def _on_confirm(self) -> None:
         """
@@ -644,7 +841,7 @@ class ChatWindow(QMainWindow):
         displays execution status, and shows the final result.
         """
 
-        if not self.pending_confirmation_text:
+        if not self.pending_confirmation_text or self.is_processing:
             return
 
         text = self.pending_confirmation_text
@@ -653,12 +850,97 @@ class ChatWindow(QMainWindow):
         self.confirm_button.setVisible(False)
 
         self._append("System", "已确认，正在执行...")
-        try:
-            turn = self.orchestrator.handle_turn(text, confirmed=True)
-        except Exception as exc:  # noqa: BLE001
-            QMessageBox.critical(self, "Error", str(exc))
+        self._start_turn_processing(text, confirmed=True)
+
+    def _check_connection_status(self) -> None:
+        """检查远程服务器连接状态并更新UI显示。"""
+        if not self.connection_indicator or not self.connection_status_label:
             return
-        self._append("Assistant", turn.assistant_text)
+
+        logger = get_logger()
+
+        # 仅在启用 SSH 且配置了主机时才进行远程连通性探测。
+        if not self.cfg.ssh_enabled or not self.cfg.ssh or not self.cfg.ssh.host:
+            if not self._skip_connection_check_logged:
+                logger.info("远程连接检测跳过：SSH 未启用或主机未配置")
+                self._skip_connection_check_logged = True
+            self.is_remote_connected = False
+            self._last_connection_state = False
+            self.connection_indicator.setStyleSheet(
+                "QFrame { background-color: #ef4444; border-radius: 6px; }"
+            )
+            self.connection_status_label.setText("未连接")
+            self.connection_status_label.setStyleSheet(
+                "color: #ef4444; font-size: 11px; font-weight: bold;"
+            )
+            return
+
+        try:
+            self._skip_connection_check_logged = False
+            logger.info(
+                "开始检测远程连接: %s:%s 用户=%s",
+                self.cfg.ssh.host,
+                str(self.cfg.ssh.port),
+                self.cfg.ssh.username,
+            )
+            os_release = self.orchestrator.executor.read_os_release()
+            if os_release:
+                self.is_remote_connected = True
+                logger.info("远程连接检测结果: 已连接")
+                if self._last_connection_state is not True:
+                    log_connection(
+                        host=self.cfg.ssh.host,
+                        port=self.cfg.ssh.port,
+                        username=self.cfg.ssh.username,
+                        success=True,
+                    )
+                self._last_connection_state = True
+                self.connection_indicator.setStyleSheet(
+                    "QFrame { background-color: #22c55e; border-radius: 6px; }"
+                )
+                self.connection_status_label.setText("已连接")
+                self.connection_status_label.setStyleSheet(
+                    "color: #22c55e; font-size: 11px; font-weight: bold;"
+                )
+            else:
+                self.is_remote_connected = False
+                logger.warning("远程连接检测结果: 未连接")
+                if self._last_connection_state is not False:
+                    log_connection(
+                        host=self.cfg.ssh.host,
+                        port=self.cfg.ssh.port,
+                        username=self.cfg.ssh.username,
+                        success=False,
+                    )
+                self._last_connection_state = False
+                self.connection_indicator.setStyleSheet(
+                    "QFrame { background-color: #ef4444; border-radius: 6px; }"
+                )
+                self.connection_status_label.setText("未连接")
+                self.connection_status_label.setStyleSheet(
+                    "color: #ef4444; font-size: 11px; font-weight: bold;"
+                )
+        except Exception as exc:  # noqa: BLE001
+            self.is_remote_connected = False
+            logger.error("远程连接检测异常: %s", str(exc))
+            if self.cfg.ssh:
+                if self._last_connection_state is not False:
+                    log_connection(
+                        host=self.cfg.ssh.host,
+                        port=self.cfg.ssh.port,
+                        username=self.cfg.ssh.username,
+                        success=False,
+                    )
+                self._last_connection_state = False
+            self.connection_indicator.setStyleSheet(
+                "QFrame { background-color: #ef4444; border-radius: 6px; }"
+            )
+            self.connection_status_label.setText("未连接")
+            self.connection_status_label.setStyleSheet(
+                "color: #ef4444; font-size: 11px; font-weight: bold;"
+            )
+            logger = get_logger()
+            logger.debug("Connection status check error: %s", str(exc))
 
 
 def run_app() -> None:
@@ -671,6 +953,7 @@ def run_app() -> None:
     """
 
     app = QApplication(sys.argv)
+    get_logger().info("启动 OS 智能代理应用程序")
     app.setStyle("Fusion")
     app.setStyleSheet(
         "QMainWindow{background:#ededf0;color:#1f2937;font-family:'Microsoft YaHei';}"
@@ -695,9 +978,10 @@ def run_app() -> None:
         "#welcomeSubtitle{font-size:19px;color:#6b7280;}"
         "#chipButton{background:#ffffff;color:#1f2937;border:1px solid #d1d5db;border-radius:12px;padding:8px 14px;font-size:13px;}"
         "#chipButton:hover{background:#f8fafc;border-color:#9ca3af;}"
-        "#chatView{background:#ededf0;border:none;padding:8px;font-size:14px;}"
+        "#chatView{background:#ededf0;border:none;padding:10px;font-size:17px;}"
         "#composer{background:#f2f2f3;border:1px solid #e5e7eb;border-radius:14px;}"
-        "QLineEdit{background:#ffffff;border:1px solid #d1d5db;border-radius:12px;padding:11px 14px;font-size:14px;}"
+        "QLineEdit{background:#ffffff;color:#111827;border:1px solid #d1d5db;border-radius:12px;padding:12px 14px;font-size:16px;}"
+        "QLineEdit::placeholder{color:#6b7280;}"
         "#sendButton{background:#10b981;color:#ffffff;border:none;border-radius:10px;padding:10px 18px;font-size:14px;font-weight:600;}"
         "#sendButton:hover{background:#059669;}"
         "#confirmButton{background:#f59e0b;color:#ffffff;border:none;border-radius:10px;padding:10px 14px;font-size:13px;font-weight:600;}"

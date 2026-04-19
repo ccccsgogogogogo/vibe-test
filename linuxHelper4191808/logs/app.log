@@ -1,0 +1,26 @@
+[2026-04-20 00:02:27] [INFO    ] [os_agent] 启动 OS 智能代理应用程序
+[2026-04-20 00:02:27] [INFO    ] [os_agent] 成功加载 2 个对话会话
+[2026-04-20 00:02:27] [INFO    ] [os_agent] 远程连接检测跳过：SSH 未启用或主机未配置
+[2026-04-20 00:02:27] [INFO    ] [os_agent] 聊天窗口初始化完成
+[2026-04-20 00:02:41] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-20 00:02:41] [INFO    ] [os_agent] 处理用户请求: 查看linux日志
+[2026-04-20 00:02:41] [WARNING ] [os_agent] 命令执行 [失败] - 类型: 本地, 命令: cat /etc/os-release, 返回码: 1, 错误: 'cat' 不是内部或外部命令，也不是可运行的程序
+或批处理文件。
+
+[2026-04-20 00:02:41] [INFO    ] [os_agent] 意图规划完成: intent=log_view, command=journalctl -n 100 --no-pager
+[2026-04-20 00:02:41] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-20 00:02:41] [INFO    ] [os_agent] 开始执行命令: journalctl -n 100 --no-pager
+[2026-04-20 00:02:41] [WARNING ] [os_agent] 命令执行 [失败] - 类型: 本地, 命令: journalctl -n 100 --no-pager, 返回码: 1, 错误: 'journalctl' 不是内部或外部命令，也不是可运行的程序
+或批处理文件。
+
+[2026-04-20 00:02:41] [INFO    ] [os_agent] 命令执行完成: return_code=1, stdout_len=0, stderr_len=41
+[2026-04-20 00:02:47] [INFO    ] [os_agent] 用户请求处理完成
+[2026-04-20 00:02:47] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-20 00:03:50] [INFO    ] [os_agent] 启动 OS 智能代理应用程序
+[2026-04-20 00:03:51] [INFO    ] [os_agent] 成功加载 2 个对话会话
+[2026-04-20 00:03:51] [INFO    ] [os_agent] 远程连接检测跳过：SSH 未启用或主机未配置
+[2026-04-20 00:03:51] [INFO    ] [os_agent] 聊天窗口初始化完成
+[2026-04-20 00:04:37] [INFO    ] [os_agent] 启动 OS 智能代理应用程序
+[2026-04-20 00:04:37] [INFO    ] [os_agent] 成功加载 2 个对话会话
+[2026-04-20 00:04:37] [INFO    ] [os_agent] 远程连接检测跳过：SSH 未启用或主机未配置
+[2026-04-20 00:04:37] [INFO    ] [os_agent] 聊天窗口初始化完成
