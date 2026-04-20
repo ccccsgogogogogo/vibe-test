@@ -49,6 +49,8 @@ class Orchestrator:
 
             # 规划意图并执行安全评估。
             plan = self.planner.plan(user_text, profile=profile)
+            if plan.intent == "generic_shell" and plan.command.startswith("echo 'Intent not mapped yet"):
+                plan = self._generate_generic_shell_command(user_text, profile)
             logger.info(f"意图规划完成: intent={plan.intent}, command={plan.command}")
 
             if not plan.execute:
@@ -159,6 +161,64 @@ class Orchestrator:
                 exc_info=True
             )
             raise
+
+    def _generate_generic_shell_command(self, user_text: str, profile: str) -> PlannedCommand:
+        """Use the configured model to infer a safe shell command from natural language."""
+        prompt = [
+            {
+                "role": "system",
+                "content": (
+                    "You are a Linux shell command generator. Given a natural language user request, "
+                    "output exactly one bash command or a short bash command sequence. "
+                    "Do not add explanations or markdown formatting. Do not quote the command. "
+                    "If the request is unclear, unsafe, or you cannot infer a command, respond with COMMAND_NOT_FOUND. "
+                    "For SSH key insertion, generate the command to append the public key into ~/.ssh/authorized_keys safely."
+                ),
+            },
+            {
+                "role": "user",
+                "content": (
+                    f"User request: {user_text}\n"
+                    f"Profile: {profile}\n"
+                    "Generate a single executable bash command to satisfy this request."
+                ),
+            },
+        ]
+
+        chunks: List[str] = []
+        for chunk in self.model.stream_chat(prompt):
+            chunks.append(chunk)
+
+        generated = "".join(chunks).strip()
+        command = self._extract_command_from_model_output(generated)
+
+        if not command or command == "COMMAND_NOT_FOUND":
+            return PlannedCommand(
+                intent="generic_shell",
+                command="echo 'Intent not mapped yet. Please extend planner.'",
+                execute=False,
+                response_text=(
+                    "无法自动将该自然语言请求映射为安全的Shell命令。"
+                    " 请更明确描述操作目标或使用更具体的服务器命令。"
+                ),
+            )
+
+        return PlannedCommand(intent="generic_shell", command=command)
+
+    @staticmethod
+    def _extract_command_from_model_output(output: str) -> str:
+        lines = [line.strip() for line in output.splitlines() if line.strip()]
+        if not lines:
+            return ""
+        first = lines[0]
+        if first.startswith("```"):
+            code_lines = []
+            for line in lines[1:]:
+                if line.startswith("```"):
+                    break
+                code_lines.append(line)
+            return "\n".join(code_lines).strip()
+        return first
 
     @staticmethod
     def _fallback_summary(result: LinuxCommandResult) -> str:

@@ -101,10 +101,17 @@ class ChatWindow(QMainWindow):
         self.connection_status_label: QLabel | None = None
         self.connection_indicator: QFrame | None = None
         
-        # 定时器：每2秒检查连接状态
+        # 定时器：连接成功后停止，断开时每10秒重连一次
         self.connection_check_timer = QTimer()
         self.connection_check_timer.timeout.connect(self._check_connection_status)
-        self.connection_check_timer.start(2000)
+        # 启动时先检查一次，之后根据连接状态决定是否继续定时检查
+        self.connection_check_timer.setSingleShot(True)  # 只触发一次
+        self.connection_check_timer.start(100)  # 短暂延迟后立即检查
+
+        # 重连定时器：当连接断开时每10秒尝试重连
+        self.reconnect_timer = QTimer()
+        self.reconnect_timer.timeout.connect(self._check_connection_status)
+        self.reconnect_timer.setSingleShot(False)  # 重复触发
 
         # 设置对话保存文件路径
         self.conversations_file = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'conversations.json')
@@ -895,6 +902,9 @@ class ChatWindow(QMainWindow):
                         success=True,
                     )
                 self._last_connection_state = True
+                # 连接成功后停止定期检查定时器
+                self.connection_check_timer.stop()
+                self.reconnect_timer.stop()
                 self.connection_indicator.setStyleSheet(
                     "QFrame { background-color: #22c55e; border-radius: 6px; }"
                 )
@@ -913,6 +923,9 @@ class ChatWindow(QMainWindow):
                         success=False,
                     )
                 self._last_connection_state = False
+                # 连接失败时启动重连定时器（每10秒重试）
+                if not self.reconnect_timer.isActive():
+                    self.reconnect_timer.start(10000)  # 10秒间隔
                 self.connection_indicator.setStyleSheet(
                     "QFrame { background-color: #ef4444; border-radius: 6px; }"
                 )
@@ -932,6 +945,9 @@ class ChatWindow(QMainWindow):
                         success=False,
                     )
                 self._last_connection_state = False
+                # 连接异常时启动重连定时器（每10秒重试）
+                if not self.reconnect_timer.isActive():
+                    self.reconnect_timer.start(10000)  # 10秒间隔
             self.connection_indicator.setStyleSheet(
                 "QFrame { background-color: #ef4444; border-radius: 6px; }"
             )
@@ -941,6 +957,12 @@ class ChatWindow(QMainWindow):
             )
             logger = get_logger()
             logger.debug("Connection status check error: %s", str(exc))
+
+    def closeEvent(self, event) -> None:
+        """程序关闭时停止所有定时器"""
+        self.connection_check_timer.stop()
+        self.reconnect_timer.stop()
+        event.accept()
 
 
 def run_app() -> None:
