@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "operation_id": "op-20260421154519-dd9bb4cb",
+  "created_at": "2026-04-21T15:45:19",
+  "request": {
+    "user_text": "把这三个压缩为member.zip",
+    "profile": "debian-family",
+    "intent": "generic_shell"
+  },
+  "target": {
+    "mode": "ssh",
+    "host": "124.222.119.109",
+    "port": 22
+  },
+  "operation": {
+    "command": "zip member.zip aaab.txt hwk.txt zyj.txt yfy.txt",
+    "timeout_seconds": 60,
+    "requires_confirmation": false
+  },
+  "risk": {
+    "level": "low",
+    "blocked": false,
+    "requires_confirmation": false,
+    "reason": "Allowed by default policy."
+  },
+  "status": "approved"
+}
