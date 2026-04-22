@@ -1,0 +1,7 @@
+PyQt6>=6.7.0
+requests>=2.32.0
+paramiko>=3.4.0
+python-dotenv>=1.0.1
+faster-whisper>=1.1.0
+sounddevice>=0.4.7
+numpy>=1.26.0
