@@ -1,0 +1,14 @@
+{
+  "1776871430222": {
+    "id": "1776871430222",
+    "name": "awd",
+    "command": "查看服务器内存",
+    "schedule_type": "interval",
+    "scheduled_time": "30",
+    "session_id": "session_1",
+    "enabled": true,
+    "created_at": "2026-04-22T23:23:50.222076",
+    "last_executed": null,
+    "next_execution": "2026-04-22T23:24:20.222095"
+  }
+}
