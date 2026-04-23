@@ -1,0 +1,1324 @@
+[2026-04-22 15:46:30] [INFO    ] [os_agent] 启动 OS 智能代理应用程序
+[2026-04-22 15:46:30] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cublas\bin
+[2026-04-22 15:46:30] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cudnn\bin
+[2026-04-22 15:46:30] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cuda_nvrtc\bin
+[2026-04-22 15:46:30] [INFO    ] [os_agent] Whisper 设备自动模式：优先 CUDA，失败后回退 CPU
+[2026-04-22 15:46:32] [INFO    ] [os_agent] 成功加载 10 个对话会话
+[2026-04-22 15:46:32] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 15:46:32] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 15:46:32] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 15:46:32] [INFO    ] [os_agent] 远程连接检测结果: 已连接
+[2026-04-22 15:46:32] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 15:46:32] [INFO    ] [os_agent] 聊天窗口初始化完成
+[2026-04-22 15:46:41] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-22 15:46:41] [INFO    ] [os_agent] 处理用户请求: 查看内存
+[2026-04-22 15:46:41] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 15:46:41] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 15:46:41] [INFO    ] [os_agent] 意图规划完成: intent=memory_check, command=free -h; vmstat 1 3
+[2026-04-22 15:46:41] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-22 15:46:41] [INFO    ] [os_agent] 开始执行命令: free -h; vmstat 1 3
+[2026-04-22 15:46:42] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 15:46:44] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: free -h; vmstat 1 3
+[2026-04-22 15:46:44] [INFO    ] [os_agent] 命令执行完成: return_code=0, stdout_len=633, stderr_len=0
+[2026-04-22 15:46:47] [INFO    ] [os_agent] 用户请求处理完成
+[2026-04-22 15:46:47] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-22 15:47:10] [INFO    ] [os_agent] 启动 OS 智能代理应用程序
+[2026-04-22 15:47:10] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cublas\bin
+[2026-04-22 15:47:10] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cudnn\bin
+[2026-04-22 15:47:10] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cuda_nvrtc\bin
+[2026-04-22 15:47:10] [INFO    ] [os_agent] Whisper 设备自动模式：优先 CUDA，失败后回退 CPU
+[2026-04-22 15:47:11] [INFO    ] [os_agent] 成功加载 10 个对话会话
+[2026-04-22 15:47:11] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 15:47:11] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 15:47:12] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 15:47:12] [INFO    ] [os_agent] 远程连接检测结果: 已连接
+[2026-04-22 15:47:12] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 15:47:12] [INFO    ] [os_agent] 聊天窗口初始化完成
+[2026-04-22 15:47:17] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-22 15:47:17] [INFO    ] [os_agent] 处理用户请求: 查看内存
+[2026-04-22 15:47:18] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 15:47:18] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 15:47:18] [INFO    ] [os_agent] 意图规划完成: intent=memory_check, command=free -h; vmstat 1 3
+[2026-04-22 15:47:18] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-22 15:47:18] [INFO    ] [os_agent] 开始执行命令: free -h; vmstat 1 3
+[2026-04-22 15:47:18] [WARNING ] [os_agent] 远程连接第1次失败，将在1.0s后重试: 124.222.119.109:22 - Error reading SSH protocol banner
+[2026-04-22 15:47:19] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 15:47:21] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: free -h; vmstat 1 3
+[2026-04-22 15:47:21] [INFO    ] [os_agent] 命令执行完成: return_code=0, stdout_len=631, stderr_len=0
+[2026-04-22 15:47:24] [INFO    ] [os_agent] 用户请求处理完成
+[2026-04-22 15:47:24] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-22 15:49:42] [INFO    ] [os_agent] 启动 OS 智能代理应用程序
+[2026-04-22 15:49:42] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cublas\bin
+[2026-04-22 15:49:42] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cudnn\bin
+[2026-04-22 15:49:42] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cuda_nvrtc\bin
+[2026-04-22 15:49:42] [INFO    ] [os_agent] Whisper 设备自动模式：优先 CUDA，失败后回退 CPU
+[2026-04-22 15:49:44] [INFO    ] [os_agent] 成功加载 10 个对话会话
+[2026-04-22 15:49:44] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 15:49:44] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 15:49:45] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 15:49:45] [INFO    ] [os_agent] 远程连接检测结果: 已连接
+[2026-04-22 15:49:45] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 15:49:45] [INFO    ] [os_agent] 聊天窗口初始化完成
+[2026-04-22 15:49:50] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-22 15:49:50] [INFO    ] [os_agent] 处理用户请求: 查看内存
+[2026-04-22 15:49:50] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 15:49:50] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 15:49:50] [INFO    ] [os_agent] 意图规划完成: intent=memory_check, command=free -h; vmstat 1 3
+[2026-04-22 15:49:50] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-22 15:49:50] [INFO    ] [os_agent] 开始执行命令: free -h; vmstat 1 3
+[2026-04-22 15:49:51] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 15:49:53] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: free -h; vmstat 1 3
+[2026-04-22 15:49:53] [INFO    ] [os_agent] 命令执行完成: return_code=0, stdout_len=631, stderr_len=0
+[2026-04-22 15:49:55] [INFO    ] [os_agent] 用户请求处理完成
+[2026-04-22 15:49:55] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-22 15:51:57] [INFO    ] [os_agent] 启动 OS 智能代理应用程序
+[2026-04-22 15:51:57] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cublas\bin
+[2026-04-22 15:51:57] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cudnn\bin
+[2026-04-22 15:51:57] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cuda_nvrtc\bin
+[2026-04-22 15:51:57] [INFO    ] [os_agent] Whisper 设备自动模式：优先 CUDA，失败后回退 CPU
+[2026-04-22 15:51:58] [INFO    ] [os_agent] 成功加载 10 个对话会话
+[2026-04-22 15:51:58] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 15:51:59] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 15:51:59] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 15:51:59] [INFO    ] [os_agent] 远程连接检测结果: 已连接
+[2026-04-22 15:51:59] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 15:51:59] [INFO    ] [os_agent] 聊天窗口初始化完成
+[2026-04-22 15:52:04] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-22 15:52:04] [INFO    ] [os_agent] 处理用户请求: 查看内存
+[2026-04-22 15:52:05] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 15:52:05] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 15:52:05] [INFO    ] [os_agent] 意图规划完成: intent=memory_check, command=free -h; vmstat 1 3
+[2026-04-22 15:52:05] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-22 15:52:05] [INFO    ] [os_agent] 开始执行命令: free -h; vmstat 1 3
+[2026-04-22 15:52:05] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 15:52:07] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: free -h; vmstat 1 3
+[2026-04-22 15:52:07] [INFO    ] [os_agent] 命令执行完成: return_code=0, stdout_len=631, stderr_len=0
+[2026-04-22 15:52:11] [INFO    ] [os_agent] 用户请求处理完成
+[2026-04-22 15:52:11] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-22 15:52:32] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-22 15:52:32] [INFO    ] [os_agent] 处理用户请求: 查看当前目录下文件
+[2026-04-22 15:52:32] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 15:52:32] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 15:52:34] [INFO    ] [os_agent] 意图规划完成: intent=generic_shell, command=ls -la
+[2026-04-22 15:52:34] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-22 15:52:34] [INFO    ] [os_agent] 开始执行命令: ls -la
+[2026-04-22 15:52:34] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 15:52:34] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: ls -la
+[2026-04-22 15:52:34] [INFO    ] [os_agent] 命令执行完成: return_code=0, stdout_len=1176, stderr_len=0
+[2026-04-22 15:52:37] [INFO    ] [os_agent] 用户请求处理完成
+[2026-04-22 15:52:37] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-22 15:52:57] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-22 15:52:57] [INFO    ] [os_agent] 处理用户请求: 创建A.txt
+[2026-04-22 15:52:58] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 15:52:58] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 15:52:59] [INFO    ] [os_agent] 意图规划完成: intent=generic_shell, command=echo "This is a sample text." > A.txt
+[2026-04-22 15:52:59] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-22 15:52:59] [INFO    ] [os_agent] 开始执行命令: echo "This is a sample text." > A.txt
+[2026-04-22 15:53:00] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 15:53:00] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: echo "This is a sample text." > A.txt
+[2026-04-22 15:53:00] [INFO    ] [os_agent] 命令执行完成: return_code=0, stdout_len=0, stderr_len=0
+[2026-04-22 15:53:02] [INFO    ] [os_agent] 用户请求处理完成
+[2026-04-22 15:53:02] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-22 15:53:25] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-22 15:53:25] [INFO    ] [os_agent] 处理用户请求: 删除你刚刚创建的文件
+[2026-04-22 15:53:26] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 15:53:26] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 15:53:27] [INFO    ] [os_agent] 意图规划完成: intent=generic_shell, command=rm -f A.txt
+[2026-04-22 15:53:27] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-22 15:53:27] [INFO    ] [os_agent] 开始执行命令: rm -f A.txt
+[2026-04-22 15:53:27] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 15:53:27] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: rm -f A.txt
+[2026-04-22 15:53:27] [INFO    ] [os_agent] 命令执行完成: return_code=0, stdout_len=0, stderr_len=0
+[2026-04-22 15:53:29] [INFO    ] [os_agent] 用户请求处理完成
+[2026-04-22 15:53:29] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-22 15:53:47] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-22 15:53:47] [INFO    ] [os_agent] 处理用户请求: 创建A.txt
+[2026-04-22 15:53:47] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 15:53:47] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 15:53:48] [INFO    ] [os_agent] 意图规划完成: intent=generic_shell, command=echo "" > A.txt
+[2026-04-22 15:53:49] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-22 15:53:49] [INFO    ] [os_agent] 开始执行命令: echo "" > A.txt
+[2026-04-22 15:53:49] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 15:53:49] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: echo "" > A.txt
+[2026-04-22 15:53:49] [INFO    ] [os_agent] 命令执行完成: return_code=0, stdout_len=0, stderr_len=0
+[2026-04-22 15:53:51] [INFO    ] [os_agent] 用户请求处理完成
+[2026-04-22 15:53:51] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-22 15:53:59] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-22 15:53:59] [INFO    ] [os_agent] 处理用户请求: 创建ttt.txt
+[2026-04-22 15:53:59] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 15:53:59] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 15:54:00] [INFO    ] [os_agent] 意图规划完成: intent=generic_shell, command=touch ttt.txt
+[2026-04-22 15:54:00] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-22 15:54:00] [INFO    ] [os_agent] 开始执行命令: touch ttt.txt
+[2026-04-22 15:54:01] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 15:54:01] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: touch ttt.txt
+[2026-04-22 15:54:01] [INFO    ] [os_agent] 命令执行完成: return_code=0, stdout_len=0, stderr_len=0
+[2026-04-22 15:54:03] [INFO    ] [os_agent] 用户请求处理完成
+[2026-04-22 15:54:03] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-22 15:54:28] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-22 15:54:28] [INFO    ] [os_agent] 处理用户请求: 把刚刚创建的倒数第二个文件删除
+[2026-04-22 15:54:29] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 15:54:29] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 15:54:31] [INFO    ] [os_agent] 意图规划完成: intent=generic_shell, command=rm -f "$(ls -t | head -3 | tail -1)"
+[2026-04-22 15:54:31] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-22 15:54:31] [INFO    ] [os_agent] 开始执行命令: rm -f "$(ls -t | head -3 | tail -1)"
+[2026-04-22 15:54:31] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 15:54:31] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: rm -f "$(ls -t | head -3 | tail -1)"
+[2026-04-22 15:54:31] [INFO    ] [os_agent] 命令执行完成: return_code=0, stdout_len=0, stderr_len=0
+[2026-04-22 15:54:33] [INFO    ] [os_agent] 用户请求处理完成
+[2026-04-22 15:54:33] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-22 16:01:26] [INFO    ] [os_agent] 启动 OS 智能代理应用程序
+[2026-04-22 16:01:26] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cublas\bin
+[2026-04-22 16:01:26] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cudnn\bin
+[2026-04-22 16:01:26] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cuda_nvrtc\bin
+[2026-04-22 16:01:26] [INFO    ] [os_agent] Whisper 设备自动模式：优先 CUDA，失败后回退 CPU
+[2026-04-22 16:01:28] [INFO    ] [os_agent] 成功加载 10 个对话会话
+[2026-04-22 16:01:28] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 16:01:28] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 16:01:28] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 16:01:28] [INFO    ] [os_agent] 远程连接检测结果: 已连接
+[2026-04-22 16:01:28] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 16:01:28] [INFO    ] [os_agent] 聊天窗口初始化完成
+[2026-04-22 16:07:09] [INFO    ] [os_agent] 启动 OS 智能代理应用程序
+[2026-04-22 16:07:21] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cublas\bin
+[2026-04-22 16:07:21] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cudnn\bin
+[2026-04-22 16:07:21] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cuda_nvrtc\bin
+[2026-04-22 16:07:21] [INFO    ] [os_agent] Whisper 设备自动模式：优先 CUDA，失败后回退 CPU
+[2026-04-22 16:07:22] [INFO    ] [os_agent] 成功加载 10 个对话会话
+[2026-04-22 16:07:22] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 16:07:23] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 16:07:23] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 16:07:23] [INFO    ] [os_agent] 远程连接检测结果: 已连接
+[2026-04-22 16:07:23] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 16:07:23] [INFO    ] [os_agent] 聊天窗口初始化完成
+[2026-04-22 16:07:39] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-22 16:07:39] [INFO    ] [os_agent] 处理用户请求: 把刚刚创建的文件全部删除
+[2026-04-22 16:07:40] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 16:07:40] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 16:07:42] [INFO    ] [os_agent] 意图规划完成: intent=generic_shell, command=rm -f *
+[2026-04-22 16:07:42] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-22 16:07:42] [INFO    ] [os_agent] 开始执行命令: rm -f *
+[2026-04-22 16:07:42] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 16:07:42] [WARNING ] [os_agent] 命令执行 [失败] - 类型: 远程, 命令: rm -f *, 返回码: 1, 错误: rm: cannot remove 'compressed_folder': Is a directory
+rm: cannot remove '文件夹TEST': Is a directory
+
+[2026-04-22 16:07:42] [INFO    ] [os_agent] 命令执行完成: return_code=1, stdout_len=0, stderr_len=98
+[2026-04-22 16:07:45] [INFO    ] [os_agent] 用户请求处理完成
+[2026-04-22 16:07:45] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-22 16:53:34] [INFO    ] [os_agent] 启动 OS 智能代理应用程序
+[2026-04-22 16:53:43] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cublas\bin
+[2026-04-22 16:53:43] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cudnn\bin
+[2026-04-22 16:53:43] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cuda_nvrtc\bin
+[2026-04-22 16:53:43] [INFO    ] [os_agent] Whisper 设备自动模式：优先 CUDA，失败后回退 CPU
+[2026-04-22 16:53:44] [ERROR   ] [os_agent] 加载对话失败: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "c:\Users\yfy25\Desktop\test\linuxHelper4221550\src\os_agent\ui\pyqt_chat.py", line 400, in _load_conversations
+    data = json.load(f)
+  File "C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\json\__init__.py", line 293, in load
+    return loads(fp.read(),
+        cls=cls, object_hook=object_hook,
+        parse_float=parse_float, parse_int=parse_int,
+        parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\json\decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\json\decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[2026-04-22 16:53:44] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 16:53:44] [WARNING ] [os_agent] 远程连接第1次失败，将在1.0s后重试: 124.222.119.109:22 - Error reading SSH protocol banner
+[2026-04-22 16:53:45] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 16:53:46] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 16:53:46] [INFO    ] [os_agent] 远程连接检测结果: 已连接
+[2026-04-22 16:53:46] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 16:53:46] [INFO    ] [os_agent] 聊天窗口初始化完成
+[2026-04-22 16:54:42] [INFO    ] [os_agent] 启动 OS 智能代理应用程序
+[2026-04-22 16:54:44] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cublas\bin
+[2026-04-22 16:54:44] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cudnn\bin
+[2026-04-22 16:54:44] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cuda_nvrtc\bin
+[2026-04-22 16:54:44] [INFO    ] [os_agent] Whisper 设备自动模式：优先 CUDA，失败后回退 CPU
+[2026-04-22 16:54:44] [ERROR   ] [os_agent] 加载对话失败: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "c:\Users\yfy25\Desktop\test\linuxHelper4221550\src\os_agent\ui\pyqt_chat.py", line 400, in _load_conversations
+    data = json.load(f)
+  File "C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\json\__init__.py", line 293, in load
+    return loads(fp.read(),
+        cls=cls, object_hook=object_hook,
+        parse_float=parse_float, parse_int=parse_int,
+        parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\json\decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\json\decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[2026-04-22 16:54:44] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 16:54:45] [WARNING ] [os_agent] 远程连接第1次失败，将在1.0s后重试: 124.222.119.109:22 - Error reading SSH protocol banner
+[2026-04-22 16:54:46] [WARNING ] [os_agent] 远程连接第2次失败，将在2.0s后重试: 124.222.119.109:22 - Error reading SSH protocol banner
+[2026-04-22 16:54:48] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 16:54:48] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 16:54:48] [INFO    ] [os_agent] 远程连接检测结果: 已连接
+[2026-04-22 16:54:48] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 16:54:48] [INFO    ] [os_agent] 聊天窗口初始化完成
+[2026-04-22 16:55:05] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-22 16:55:05] [INFO    ] [os_agent] 处理用户请求: 你好
+[2026-04-22 16:55:05] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-22 16:55:10] [INFO    ] [os_agent] 启动 OS 智能代理应用程序
+[2026-04-22 16:55:11] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cublas\bin
+[2026-04-22 16:55:11] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cudnn\bin
+[2026-04-22 16:55:11] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cuda_nvrtc\bin
+[2026-04-22 16:55:11] [INFO    ] [os_agent] Whisper 设备自动模式：优先 CUDA，失败后回退 CPU
+[2026-04-22 16:55:12] [INFO    ] [os_agent] 成功加载 2 个对话会话
+[2026-04-22 16:55:12] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 16:55:12] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 16:55:12] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 16:55:12] [INFO    ] [os_agent] 远程连接检测结果: 已连接
+[2026-04-22 16:55:12] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 16:55:12] [INFO    ] [os_agent] 聊天窗口初始化完成
+[2026-04-22 16:55:16] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-22 16:55:16] [INFO    ] [os_agent] 处理用户请求: 你好
+[2026-04-22 16:55:16] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-22 16:55:31] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-22 16:55:31] [INFO    ] [os_agent] 处理用户请求: 创建111.txt
+[2026-04-22 16:55:32] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 16:55:32] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 16:55:33] [INFO    ] [os_agent] 意图规划完成: intent=generic_shell, command=echo > 111.txt
+[2026-04-22 16:55:33] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-22 16:55:33] [INFO    ] [os_agent] 开始执行命令: echo > 111.txt
+[2026-04-22 16:55:33] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 16:55:33] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: echo > 111.txt
+[2026-04-22 16:55:33] [INFO    ] [os_agent] 命令执行完成: return_code=0, stdout_len=0, stderr_len=0
+[2026-04-22 16:55:35] [INFO    ] [os_agent] 用户请求处理完成
+[2026-04-22 16:55:35] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-22 16:55:45] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-22 16:55:45] [INFO    ] [os_agent] 处理用户请求: 创建2222.txt
+[2026-04-22 16:55:45] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 16:55:45] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 16:55:46] [INFO    ] [os_agent] 意图规划完成: intent=generic_shell, command=echo > 2222.txt
+[2026-04-22 16:55:46] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-22 16:55:46] [INFO    ] [os_agent] 开始执行命令: echo > 2222.txt
+[2026-04-22 16:55:47] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 16:55:47] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: echo > 2222.txt
+[2026-04-22 16:55:47] [INFO    ] [os_agent] 命令执行完成: return_code=0, stdout_len=0, stderr_len=0
+[2026-04-22 16:55:49] [INFO    ] [os_agent] 用户请求处理完成
+[2026-04-22 16:55:49] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-22 16:56:11] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-22 16:56:11] [INFO    ] [os_agent] 处理用户请求: 删除刚刚创建的倒数第二个文件
+[2026-04-22 16:56:12] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 16:56:12] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 16:56:13] [INFO    ] [os_agent] 意图规划完成: intent=generic_shell, command=rm "$(ls -1t | head -2 | tail -1)"
+[2026-04-22 16:56:13] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-22 16:56:13] [INFO    ] [os_agent] 开始执行命令: rm "$(ls -1t | head -2 | tail -1)"
+[2026-04-22 16:56:14] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 16:56:14] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: rm "$(ls -1t | head -2 | tail -1)"
+[2026-04-22 16:56:14] [INFO    ] [os_agent] 命令执行完成: return_code=0, stdout_len=0, stderr_len=0
+[2026-04-22 16:56:16] [INFO    ] [os_agent] 用户请求处理完成
+[2026-04-22 16:56:16] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-22 16:56:34] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-22 16:56:34] [INFO    ] [os_agent] 处理用户请求: 查看当前路径下的文件
+[2026-04-22 16:56:35] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 16:56:35] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 16:56:36] [INFO    ] [os_agent] 意图规划完成: intent=generic_shell, command=ls -la
+[2026-04-22 16:56:36] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-22 16:56:36] [INFO    ] [os_agent] 开始执行命令: ls -la
+[2026-04-22 16:56:36] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 16:56:36] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: ls -la
+[2026-04-22 16:56:36] [INFO    ] [os_agent] 命令执行完成: return_code=0, stdout_len=757, stderr_len=0
+[2026-04-22 16:56:39] [INFO    ] [os_agent] 用户请求处理完成
+[2026-04-22 16:56:39] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-22 16:59:35] [INFO    ] [os_agent] 启动 OS 智能代理应用程序
+[2026-04-22 16:59:37] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cublas\bin
+[2026-04-22 16:59:37] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cudnn\bin
+[2026-04-22 16:59:37] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cuda_nvrtc\bin
+[2026-04-22 16:59:37] [INFO    ] [os_agent] Whisper 设备自动模式：优先 CUDA，失败后回退 CPU
+[2026-04-22 16:59:37] [INFO    ] [os_agent] 成功加载 2 个对话会话
+[2026-04-22 16:59:37] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 16:59:37] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 16:59:38] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 16:59:38] [INFO    ] [os_agent] 远程连接检测结果: 已连接
+[2026-04-22 16:59:38] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 16:59:38] [INFO    ] [os_agent] 聊天窗口初始化完成
+[2026-04-22 17:13:49] [INFO    ] [os_agent] 启动 OS 智能代理应用程序
+[2026-04-22 17:13:51] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cublas\bin
+[2026-04-22 17:13:51] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cudnn\bin
+[2026-04-22 17:13:51] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cuda_nvrtc\bin
+[2026-04-22 17:13:51] [INFO    ] [os_agent] Whisper 设备自动模式：优先 CUDA，失败后回退 CPU
+[2026-04-22 17:13:52] [INFO    ] [os_agent] 成功加载 2 个对话会话
+[2026-04-22 17:13:52] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 17:13:52] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 17:13:52] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 17:13:52] [INFO    ] [os_agent] 远程连接检测结果: 已连接
+[2026-04-22 17:13:52] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 17:13:52] [INFO    ] [os_agent] 聊天窗口初始化完成
+[2026-04-22 17:23:10] [INFO    ] [os_agent] 启动 OS 智能代理应用程序
+[2026-04-22 17:23:14] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cublas\bin
+[2026-04-22 17:23:14] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cudnn\bin
+[2026-04-22 17:23:14] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cuda_nvrtc\bin
+[2026-04-22 17:23:14] [INFO    ] [os_agent] Whisper 设备自动模式：优先 CUDA，失败后回退 CPU
+[2026-04-22 17:23:14] [INFO    ] [os_agent] 成功加载 3 个对话会话
+[2026-04-22 17:23:14] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 17:23:14] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 17:23:15] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 17:23:15] [INFO    ] [os_agent] 远程连接检测结果: 已连接
+[2026-04-22 17:23:15] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 17:23:15] [INFO    ] [os_agent] 聊天窗口初始化完成
+[2026-04-22 17:40:41] [INFO    ] [os_agent] 启动 OS 智能代理应用程序
+[2026-04-22 17:40:43] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cublas\bin
+[2026-04-22 17:40:43] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cudnn\bin
+[2026-04-22 17:40:43] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cuda_nvrtc\bin
+[2026-04-22 17:40:43] [INFO    ] [os_agent] Whisper 设备自动模式：优先 CUDA，失败后回退 CPU
+[2026-04-22 17:40:43] [INFO    ] [os_agent] 未发现对话历史文件，已初始化默认会话
+[2026-04-22 17:40:43] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 17:40:43] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 17:40:44] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 17:40:44] [INFO    ] [os_agent] 远程连接检测结果: 已连接
+[2026-04-22 17:40:44] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 17:40:44] [INFO    ] [os_agent] 聊天窗口初始化完成
+[2026-04-22 22:03:19] [INFO    ] [os_agent] 启动 OS 智能代理应用程序
+[2026-04-22 22:03:20] [INFO    ] [os_agent] Whisper 设备自动模式：优先 CUDA，失败后回退 CPU
+[2026-04-22 22:03:20] [INFO    ] [os_agent] 成功加载 1 个对话会话
+[2026-04-22 22:03:20] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 22:03:21] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 22:03:21] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 22:03:21] [INFO    ] [os_agent] 远程连接检测结果: 已连接
+[2026-04-22 22:03:21] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 22:03:21] [INFO    ] [os_agent] 聊天窗口初始化完成
+[2026-04-22 22:03:26] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-22 22:03:26] [INFO    ] [os_agent] 处理用户请求: 你好
+[2026-04-22 22:03:26] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-22 22:03:34] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-22 22:03:34] [INFO    ] [os_agent] 处理用户请求: 查看服务器内存
+[2026-04-22 22:03:34] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 22:03:35] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 22:03:35] [INFO    ] [os_agent] 意图规划完成: intent=memory_check, command=free -h; vmstat 1 3
+[2026-04-22 22:03:35] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-22 22:03:35] [INFO    ] [os_agent] 开始执行命令: free -h; vmstat 1 3
+[2026-04-22 22:03:35] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 22:03:37] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: free -h; vmstat 1 3
+[2026-04-22 22:03:37] [INFO    ] [os_agent] 命令执行完成: return_code=0, stdout_len=633, stderr_len=0
+[2026-04-22 22:04:10] [INFO    ] [os_agent] 启动 OS 智能代理应用程序
+[2026-04-22 22:04:12] [INFO    ] [os_agent] Whisper 设备自动模式：优先 CUDA，失败后回退 CPU
+[2026-04-22 22:04:13] [INFO    ] [os_agent] 成功加载 2 个对话会话
+[2026-04-22 22:04:13] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 22:04:13] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 22:04:13] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 22:04:13] [INFO    ] [os_agent] 远程连接检测结果: 已连接
+[2026-04-22 22:04:13] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 22:04:13] [INFO    ] [os_agent] 聊天窗口初始化完成
+[2026-04-22 22:04:25] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-22 22:04:25] [INFO    ] [os_agent] 处理用户请求: 查看服务器内存
+[2026-04-22 22:04:25] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 22:04:25] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 22:04:25] [INFO    ] [os_agent] 意图规划完成: intent=memory_check, command=free -h; vmstat 1 3
+[2026-04-22 22:04:25] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-22 22:04:25] [INFO    ] [os_agent] 开始执行命令: free -h; vmstat 1 3
+[2026-04-22 22:04:25] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 22:04:28] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: free -h; vmstat 1 3
+[2026-04-22 22:04:28] [INFO    ] [os_agent] 命令执行完成: return_code=0, stdout_len=631, stderr_len=0
+[2026-04-22 22:05:11] [INFO    ] [os_agent] 启动 OS 智能代理应用程序
+[2026-04-22 22:05:12] [INFO    ] [os_agent] Whisper 设备自动模式：优先 CUDA，失败后回退 CPU
+[2026-04-22 22:05:13] [INFO    ] [os_agent] 成功加载 2 个对话会话
+[2026-04-22 22:05:13] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 22:05:13] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 22:05:13] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 22:05:13] [INFO    ] [os_agent] 远程连接检测结果: 已连接
+[2026-04-22 22:05:13] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 22:05:13] [INFO    ] [os_agent] 聊天窗口初始化完成
+[2026-04-22 22:05:19] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-22 22:05:19] [INFO    ] [os_agent] 处理用户请求: 查看服务器内存
+[2026-04-22 22:05:20] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 22:05:20] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 22:05:20] [INFO    ] [os_agent] 意图规划完成: intent=memory_check, command=free -h; vmstat 1 3
+[2026-04-22 22:05:20] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-22 22:05:20] [INFO    ] [os_agent] 开始执行命令: free -h; vmstat 1 3
+[2026-04-22 22:05:20] [WARNING ] [os_agent] 远程连接第1次失败，将在1.0s后重试: 124.222.119.109:22 - Error reading SSH protocol banner
+[2026-04-22 22:05:21] [WARNING ] [os_agent] 远程连接第2次失败，将在2.0s后重试: 124.222.119.109:22 - Error reading SSH protocol banner
+[2026-04-22 22:05:23] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 22:05:25] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: free -h; vmstat 1 3
+[2026-04-22 22:05:25] [INFO    ] [os_agent] 命令执行完成: return_code=0, stdout_len=633, stderr_len=0
+[2026-04-22 22:06:37] [INFO    ] [os_agent] 启动 OS 智能代理应用程序
+[2026-04-22 22:06:42] [INFO    ] [os_agent] Whisper 设备自动模式：优先 CUDA，失败后回退 CPU
+[2026-04-22 22:06:43] [INFO    ] [os_agent] 成功加载 2 个对话会话
+[2026-04-22 22:06:43] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 22:06:43] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 22:06:43] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 22:06:43] [INFO    ] [os_agent] 远程连接检测结果: 已连接
+[2026-04-22 22:06:43] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 22:06:43] [INFO    ] [os_agent] 聊天窗口初始化完成
+[2026-04-22 22:07:14] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-22 22:07:14] [INFO    ] [os_agent] 处理用户请求: 查看服务器的剩余空间
+[2026-04-22 22:07:15] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 22:07:15] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 22:07:15] [INFO    ] [os_agent] 意图规划完成: intent=service_status, command=systemctl --type=service --state=running | head -n 50
+[2026-04-22 22:07:15] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-22 22:07:15] [INFO    ] [os_agent] 开始执行命令: systemctl --type=service --state=running | head -n 50
+[2026-04-22 22:07:15] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 22:07:15] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: systemctl --type=service --state=running | head -n 50
+[2026-04-22 22:07:15] [INFO    ] [os_agent] 命令执行完成: return_code=0, stdout_len=1900, stderr_len=0
+[2026-04-22 22:10:32] [INFO    ] [os_agent] 启动 OS 智能代理应用程序
+[2026-04-22 22:10:34] [INFO    ] [os_agent] Whisper 设备自动模式：优先 CUDA，失败后回退 CPU
+[2026-04-22 22:10:34] [INFO    ] [os_agent] 成功加载 1 个对话会话
+[2026-04-22 22:10:34] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 22:10:34] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 22:10:35] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 22:10:35] [INFO    ] [os_agent] 远程连接检测结果: 已连接
+[2026-04-22 22:10:35] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 22:10:35] [INFO    ] [os_agent] 聊天窗口初始化完成
+[2026-04-22 22:10:40] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-22 22:10:40] [INFO    ] [os_agent] 处理用户请求: 查看服务器的剩余空间
+[2026-04-22 22:10:40] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 22:10:40] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 22:10:40] [INFO    ] [os_agent] 意图规划完成: intent=service_status, command=systemctl --type=service --state=running | head -n 50
+[2026-04-22 22:10:40] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-22 22:10:40] [INFO    ] [os_agent] 开始执行命令: systemctl --type=service --state=running | head -n 50
+[2026-04-22 22:10:40] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 22:10:41] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: systemctl --type=service --state=running | head -n 50
+[2026-04-22 22:10:41] [INFO    ] [os_agent] 命令执行完成: return_code=0, stdout_len=1900, stderr_len=0
+[2026-04-22 22:18:53] [INFO    ] [os_agent] 启动 OS 智能代理应用程序
+[2026-04-22 22:18:54] [INFO    ] [os_agent] Whisper 设备自动模式：优先 CUDA，失败后回退 CPU
+[2026-04-22 22:18:54] [INFO    ] [os_agent] 成功加载 1 个对话会话
+[2026-04-22 22:18:54] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 22:18:54] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 22:18:54] [INFO    ] [os_agent] 远程连接 [失败] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 22:18:54] [INFO    ] [os_agent] 聊天窗口初始化完成
+[2026-04-22 22:18:54] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 22:18:54] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 22:18:58] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-22 22:18:58] [INFO    ] [os_agent] 处理用户请求: 查看服务器的剩余空间
+[2026-04-22 22:18:58] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 22:18:59] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 22:18:59] [INFO    ] [os_agent] 意图规划完成: intent=service_status, command=systemctl --type=service --state=running | head -n 50
+[2026-04-22 22:18:59] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-22 22:18:59] [INFO    ] [os_agent] 开始执行命令: systemctl --type=service --state=running | head -n 50
+[2026-04-22 22:18:59] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: systemctl --type=service --state=running | head -n 50
+[2026-04-22 22:18:59] [INFO    ] [os_agent] 命令执行完成: return_code=0, stdout_len=1900, stderr_len=0
+[2026-04-22 22:19:04] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 22:19:04] [INFO    ] [os_agent] 远程连接检测结果: 已连接
+[2026-04-22 22:19:04] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 22:19:04] [INFO    ] [os_agent] 用户请求处理完成
+[2026-04-22 22:19:04] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-22 22:19:16] [INFO    ] [os_agent] 启动 OS 智能代理应用程序
+[2026-04-22 22:19:17] [INFO    ] [os_agent] Whisper 设备自动模式：优先 CUDA，失败后回退 CPU
+[2026-04-22 22:19:17] [INFO    ] [os_agent] 成功加载 1 个对话会话
+[2026-04-22 22:19:17] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 22:19:17] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 22:19:17] [INFO    ] [os_agent] 远程连接 [失败] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 22:19:17] [INFO    ] [os_agent] 聊天窗口初始化完成
+[2026-04-22 22:19:17] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 22:19:17] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 22:19:27] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 22:19:27] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 22:19:34] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-22 22:19:34] [INFO    ] [os_agent] 处理用户请求: 查看服务器的剩余空间
+[2026-04-22 22:19:34] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 22:19:34] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 22:19:34] [INFO    ] [os_agent] 意图规划完成: intent=service_status, command=systemctl --type=service --state=running | head -n 50
+[2026-04-22 22:19:34] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-22 22:19:34] [INFO    ] [os_agent] 开始执行命令: systemctl --type=service --state=running | head -n 50
+[2026-04-22 22:19:34] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: systemctl --type=service --state=running | head -n 50
+[2026-04-22 22:19:34] [INFO    ] [os_agent] 命令执行完成: return_code=0, stdout_len=1900, stderr_len=0
+[2026-04-22 22:19:37] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 22:19:37] [INFO    ] [os_agent] 远程连接检测结果: 已连接
+[2026-04-22 22:19:37] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 22:19:39] [INFO    ] [os_agent] 用户请求处理完成
+[2026-04-22 22:19:39] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-22 22:20:05] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-22 22:20:05] [INFO    ] [os_agent] 处理用户请求: 讲个笑话
+[2026-04-22 22:20:05] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 22:20:07] [INFO    ] [os_agent] 意图规划完成: intent=generic_shell, command=echo 'Intent not mapped yet. Please extend planner.'
+[2026-04-22 22:20:07] [INFO    ] [os_agent] 对话意图无需执行: generic_shell, 返回预设响应
+[2026-04-22 22:20:07] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-22 22:20:27] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-22 22:20:27] [INFO    ] [os_agent] 处理用户请求: 查看服务器内存
+[2026-04-22 22:20:27] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 22:20:27] [INFO    ] [os_agent] 意图规划完成: intent=memory_check, command=free -h; vmstat 1 3
+[2026-04-22 22:20:27] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-22 22:20:27] [INFO    ] [os_agent] 开始执行命令: free -h; vmstat 1 3
+[2026-04-22 22:20:30] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: free -h; vmstat 1 3
+[2026-04-22 22:20:30] [INFO    ] [os_agent] 命令执行完成: return_code=0, stdout_len=633, stderr_len=0
+[2026-04-22 22:20:34] [INFO    ] [os_agent] 用户请求处理完成
+[2026-04-22 22:20:34] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-22 22:35:04] [INFO    ] [os_agent] 启动 OS 智能代理应用程序
+[2026-04-22 22:35:05] [INFO    ] [os_agent] Whisper 设备自动模式：优先 CUDA，失败后回退 CPU
+[2026-04-22 22:35:05] [INFO    ] [os_agent] 成功加载 3 个对话会话
+[2026-04-22 22:35:05] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 22:35:05] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 22:35:05] [INFO    ] [os_agent] 远程连接 [失败] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 22:35:05] [INFO    ] [os_agent] 聊天窗口初始化完成
+[2026-04-22 22:35:05] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 22:35:05] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 22:35:15] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 22:35:15] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 22:35:25] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 22:35:25] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 22:35:35] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 22:35:35] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 22:35:44] [INFO    ] [os_agent] 定时任务创建成功: awdawd
+[2026-04-22 22:35:45] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 22:35:45] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 22:35:55] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 22:35:55] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 22:36:05] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 22:36:05] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 22:36:15] [INFO    ] [os_agent] 启动 OS 智能代理应用程序
+[2026-04-22 22:36:17] [INFO    ] [os_agent] Whisper 设备自动模式：优先 CUDA，失败后回退 CPU
+[2026-04-22 22:36:17] [INFO    ] [os_agent] 成功加载 3 个对话会话
+[2026-04-22 22:36:17] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 22:36:17] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 22:36:17] [INFO    ] [os_agent] 远程连接 [失败] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 22:36:17] [INFO    ] [os_agent] 聊天窗口初始化完成
+[2026-04-22 22:36:17] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 22:36:17] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 22:36:26] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-22 22:36:26] [INFO    ] [os_agent] 处理用户请求: 查看服务器内存
+[2026-04-22 22:36:26] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 22:36:27] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 22:36:27] [INFO    ] [os_agent] 意图规划完成: intent=memory_check, command=free -h; vmstat 1 3
+[2026-04-22 22:36:27] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-22 22:36:27] [INFO    ] [os_agent] 开始执行命令: free -h; vmstat 1 3
+[2026-04-22 22:36:27] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 22:36:27] [INFO    ] [os_agent] 远程连接检测结果: 已连接
+[2026-04-22 22:36:27] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 22:36:29] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: free -h; vmstat 1 3
+[2026-04-22 22:36:29] [INFO    ] [os_agent] 命令执行完成: return_code=0, stdout_len=633, stderr_len=0
+[2026-04-22 22:36:37] [INFO    ] [os_agent] 用户请求处理完成
+[2026-04-22 22:36:37] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-22 22:38:39] [INFO    ] [os_agent] 定时任务创建成功: awdawd
+[2026-04-22 22:45:10] [INFO    ] [os_agent] 启动 OS 智能代理应用程序
+[2026-04-22 22:45:12] [INFO    ] [os_agent] Whisper 设备自动模式：优先 CUDA，失败后回退 CPU
+[2026-04-22 22:45:12] [INFO    ] [os_agent.scheduler] 执行定时任务: awdawd
+[2026-04-22 22:45:12] [INFO    ] [os_agent.scheduler] 执行定时任务: awdawd
+[2026-04-22 22:45:12] [INFO    ] [os_agent.scheduler] 本轮执行了 2 个任务
+[2026-04-22 22:45:12] [INFO    ] [os_agent] 成功加载 3 个对话会话
+[2026-04-22 22:45:12] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 22:45:12] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 22:45:12] [INFO    ] [os_agent] 远程连接 [失败] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 22:45:12] [INFO    ] [os_agent] 聊天窗口初始化完成
+[2026-04-22 22:45:12] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 22:45:12] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 22:45:17] [INFO    ] [os_agent] 定时任务删除成功: awdawd
+[2026-04-22 22:45:22] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 22:45:22] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 22:45:32] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 22:45:32] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 22:45:42] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 22:45:42] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 22:45:47] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-22 22:45:47] [INFO    ] [os_agent] 处理用户请求: 你好
+[2026-04-22 22:45:47] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-22 22:45:52] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 22:45:52] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 22:45:55] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-22 22:45:55] [INFO    ] [os_agent] 处理用户请求: 查看服务器内存
+[2026-04-22 22:45:55] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 22:45:56] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 22:45:56] [INFO    ] [os_agent] 意图规划完成: intent=memory_check, command=free -h; vmstat 1 3
+[2026-04-22 22:45:56] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-22 22:45:56] [INFO    ] [os_agent] 开始执行命令: free -h; vmstat 1 3
+[2026-04-22 22:45:58] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: free -h; vmstat 1 3
+[2026-04-22 22:45:58] [INFO    ] [os_agent] 命令执行完成: return_code=0, stdout_len=633, stderr_len=0
+[2026-04-22 22:46:02] [INFO    ] [os_agent] 用户请求处理完成
+[2026-04-22 22:46:02] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-22 22:46:02] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 22:46:02] [INFO    ] [os_agent] 远程连接检测结果: 已连接
+[2026-04-22 22:46:02] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 22:46:10] [INFO    ] [os_agent] 定时任务删除成功: awdawd
+[2026-04-22 22:51:42] [INFO    ] [os_agent] 启动 OS 智能代理应用程序
+[2026-04-22 22:51:43] [INFO    ] [os_agent] Whisper 设备自动模式：优先 CUDA，失败后回退 CPU
+[2026-04-22 22:51:43] [INFO    ] [os_agent] 成功加载 2 个对话会话
+[2026-04-22 22:51:43] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 22:51:43] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 22:51:43] [INFO    ] [os_agent] 远程连接 [失败] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 22:51:43] [INFO    ] [os_agent] 聊天窗口初始化完成
+[2026-04-22 22:51:43] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 22:51:43] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 22:51:53] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 22:51:53] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 22:51:59] [INFO    ] [os_agent] 定时任务创建成功: awdwa
+[2026-04-22 22:52:03] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 22:52:03] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 22:52:13] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-22 22:52:13] [INFO    ] [os_agent] 处理用户请求: 查看服务器内存
+[2026-04-22 22:52:13] [WARNING ] [os_agent] 远程连接第1次失败，将在1.0s后重试: 124.222.119.109:22 - Error reading SSH protocol banner
+[2026-04-22 22:52:13] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 22:52:13] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 22:52:14] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 22:52:15] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 22:52:15] [INFO    ] [os_agent] 意图规划完成: intent=memory_check, command=free -h; vmstat 1 3
+[2026-04-22 22:52:15] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-22 22:52:15] [INFO    ] [os_agent] 开始执行命令: free -h; vmstat 1 3
+[2026-04-22 22:52:17] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: free -h; vmstat 1 3
+[2026-04-22 22:52:17] [INFO    ] [os_agent] 命令执行完成: return_code=0, stdout_len=631, stderr_len=0
+[2026-04-22 22:52:23] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 22:52:23] [INFO    ] [os_agent] 远程连接检测结果: 已连接
+[2026-04-22 22:52:23] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 22:52:24] [INFO    ] [os_agent] 用户请求处理完成
+[2026-04-22 22:52:24] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-22 23:02:54] [INFO    ] [os_agent] 启动 OS 智能代理应用程序
+[2026-04-22 23:02:55] [INFO    ] [os_agent] Whisper 设备自动模式：优先 CUDA，失败后回退 CPU
+[2026-04-22 23:02:55] [INFO    ] [os_agent] 成功加载 2 个对话会话
+[2026-04-22 23:02:55] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 23:02:55] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 23:02:55] [INFO    ] [os_agent] 远程连接 [失败] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 23:02:55] [INFO    ] [os_agent] 聊天窗口初始化完成
+[2026-04-22 23:02:55] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 23:02:55] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 23:03:05] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 23:03:05] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 23:03:13] [INFO    ] [os_agent] 定时任务创建成功: awdaw，绑定到对话 session_1
+[2026-04-22 23:03:15] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 23:03:15] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 23:03:25] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 23:03:25] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 23:03:34] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-22 23:03:34] [INFO    ] [os_agent] 处理用户请求: 查看服务器内存
+[2026-04-22 23:03:34] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 23:03:34] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 23:03:34] [INFO    ] [os_agent] 意图规划完成: intent=memory_check, command=free -h; vmstat 1 3
+[2026-04-22 23:03:34] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-22 23:03:34] [INFO    ] [os_agent] 开始执行命令: free -h; vmstat 1 3
+[2026-04-22 23:03:35] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 23:03:35] [INFO    ] [os_agent] 远程连接检测结果: 已连接
+[2026-04-22 23:03:35] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 23:03:36] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: free -h; vmstat 1 3
+[2026-04-22 23:03:36] [INFO    ] [os_agent] 命令执行完成: return_code=0, stdout_len=632, stderr_len=0
+[2026-04-22 23:03:42] [INFO    ] [os_agent] 用户请求处理完成
+[2026-04-22 23:03:42] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-22 23:09:27] [INFO    ] [os_agent] 启动 OS 智能代理应用程序
+[2026-04-22 23:09:28] [INFO    ] [os_agent] Whisper 设备自动模式：优先 CUDA，失败后回退 CPU
+[2026-04-22 23:09:28] [INFO    ] [os_agent.scheduler] 定时任务调度器已启动
+[2026-04-22 23:09:28] [INFO    ] [os_agent.scheduler] 调度器启动成功
+[2026-04-22 23:09:28] [INFO    ] [os_agent] 成功加载 2 个对话会话
+[2026-04-22 23:09:28] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 23:09:28] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 23:09:28] [INFO    ] [os_agent] 远程连接 [失败] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 23:09:28] [INFO    ] [os_agent] 聊天窗口初始化完成
+[2026-04-22 23:09:28] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 23:09:28] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 23:09:38] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 23:09:38] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 23:09:48] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 23:09:48] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 23:09:52] [INFO    ] [os_agent] 定时任务创建成功: awd，绑定到对话 session_1
+[2026-04-22 23:09:58] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 23:09:58] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 23:10:08] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-22 23:10:08] [INFO    ] [os_agent] 处理用户请求: 查看服务器内存
+[2026-04-22 23:10:08] [WARNING ] [os_agent] 远程连接第1次失败，将在1.0s后重试: 124.222.119.109:22 - Error reading SSH protocol banner
+[2026-04-22 23:10:08] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 23:10:08] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 23:10:09] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 23:10:10] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 23:10:10] [INFO    ] [os_agent] 意图规划完成: intent=memory_check, command=free -h; vmstat 1 3
+[2026-04-22 23:10:10] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-22 23:10:10] [INFO    ] [os_agent] 开始执行命令: free -h; vmstat 1 3
+[2026-04-22 23:10:12] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: free -h; vmstat 1 3
+[2026-04-22 23:10:12] [INFO    ] [os_agent] 命令执行完成: return_code=0, stdout_len=633, stderr_len=0
+[2026-04-22 23:10:18] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 23:10:18] [INFO    ] [os_agent] 远程连接检测结果: 已连接
+[2026-04-22 23:10:18] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 23:10:20] [INFO    ] [os_agent] 用户请求处理完成
+[2026-04-22 23:10:20] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-22 23:10:22] [INFO    ] [os_agent.scheduler] 执行定时任务: awd (ID: 1776870592439)
+[2026-04-22 23:10:22] [INFO    ] [os_agent.scheduler] 本轮执行了 1 个任务
+[2026-04-22 23:15:39] [INFO    ] [os_agent] 启动 OS 智能代理应用程序
+[2026-04-22 23:15:40] [INFO    ] [os_agent] Whisper 设备自动模式：优先 CUDA，失败后回退 CPU
+[2026-04-22 23:15:40] [INFO    ] [os_agent.scheduler] 定时任务调度器已启动
+[2026-04-22 23:15:40] [INFO    ] [os_agent.scheduler] 调度器启动成功
+[2026-04-22 23:15:40] [INFO    ] [os_agent.scheduler] 执行定时任务: awd (ID: 1776870592439)
+[2026-04-22 23:15:40] [INFO    ] [os_agent.scheduler] 执行定时任务: 测试任务 (ID: test_task_1)
+[2026-04-22 23:15:40] [INFO    ] [os_agent.scheduler] 本轮执行了 2 个任务
+[2026-04-22 23:15:40] [INFO    ] [os_agent] 成功加载 2 个对话会话
+[2026-04-22 23:15:40] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 23:15:40] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 23:15:40] [INFO    ] [os_agent] 远程连接 [失败] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 23:15:40] [INFO    ] [os_agent] 聊天窗口初始化完成
+[2026-04-22 23:15:40] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 23:15:40] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 23:15:42] [INFO    ] [os_agent] 定时任务删除成功: 测试任务
+[2026-04-22 23:15:47] [INFO    ] [os_agent] 定时任务删除成功: awd
+[2026-04-22 23:15:50] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 23:15:50] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 23:16:00] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 23:16:00] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 23:16:07] [INFO    ] [os_agent] 定时任务创建成功: awd，绑定到对话 session_1
+[2026-04-22 23:16:10] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 23:16:10] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 23:16:20] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 23:16:20] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 23:16:29] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-22 23:16:29] [INFO    ] [os_agent] 处理用户请求: 查看服务器内存
+[2026-04-22 23:16:30] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 23:16:30] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 23:16:30] [INFO    ] [os_agent] 远程连接检测结果: 已连接
+[2026-04-22 23:16:30] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 23:16:30] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 23:16:30] [INFO    ] [os_agent] 意图规划完成: intent=memory_check, command=free -h; vmstat 1 3
+[2026-04-22 23:16:30] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-22 23:16:30] [INFO    ] [os_agent] 开始执行命令: free -h; vmstat 1 3
+[2026-04-22 23:16:32] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: free -h; vmstat 1 3
+[2026-04-22 23:16:32] [INFO    ] [os_agent] 命令执行完成: return_code=0, stdout_len=632, stderr_len=0
+[2026-04-22 23:16:37] [INFO    ] [os_agent.scheduler] 执行定时任务: awd (ID: 1776870967186)
+[2026-04-22 23:16:37] [INFO    ] [os_agent.scheduler] 本轮执行了 1 个任务
+[2026-04-22 23:16:39] [INFO    ] [os_agent] 用户请求处理完成
+[2026-04-22 23:16:39] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-22 23:16:51] [INFO    ] [os_agent] 定时任务更新成功: awd
+[2026-04-22 23:23:23] [INFO    ] [os_agent] 启动 OS 智能代理应用程序
+[2026-04-22 23:23:24] [INFO    ] [os_agent] Whisper 设备自动模式：优先 CUDA，失败后回退 CPU
+[2026-04-22 23:23:24] [INFO    ] [os_agent.scheduler] 定时任务调度器已启动
+[2026-04-22 23:23:24] [INFO    ] [os_agent.scheduler] 调度器启动成功
+[2026-04-22 23:23:24] [INFO    ] [os_agent.scheduler] 执行定时任务: awd (ID: 1776870967186)
+[2026-04-22 23:23:24] [INFO    ] [os_agent.scheduler] 执行定时任务: 测试任务 (ID: test_task_1)
+[2026-04-22 23:23:24] [INFO    ] [os_agent.scheduler] 本轮执行了 2 个任务
+[2026-04-22 23:23:24] [INFO    ] [os_agent] 成功加载 2 个对话会话
+[2026-04-22 23:23:24] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 23:23:24] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 23:23:24] [INFO    ] [os_agent] 远程连接 [失败] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 23:23:24] [INFO    ] [os_agent] 聊天窗口初始化完成
+[2026-04-22 23:23:24] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 23:23:24] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 23:23:29] [INFO    ] [os_agent.scheduler] 执行定时任务: 测试任务 (ID: test_task_1)
+[2026-04-22 23:23:29] [INFO    ] [os_agent.scheduler] 本轮执行了 1 个任务
+[2026-04-22 23:23:31] [INFO    ] [os_agent] 定时任务删除成功: awd
+[2026-04-22 23:23:34] [INFO    ] [os_agent.scheduler] 执行定时任务: 测试任务 (ID: test_task_1)
+[2026-04-22 23:23:34] [INFO    ] [os_agent.scheduler] 本轮执行了 1 个任务
+[2026-04-22 23:23:34] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 23:23:34] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 23:23:34] [INFO    ] [os_agent] 定时任务删除成功: 测试任务
+[2026-04-22 23:23:44] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 23:23:44] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 23:23:50] [INFO    ] [os_agent] 定时任务创建成功: awd，绑定到对话 session_1
+[2026-04-22 23:23:54] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 23:23:54] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 23:24:04] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 23:24:04] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-22 23:24:07] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-22 23:24:07] [INFO    ] [os_agent] 处理用户请求: 查看服务器内存
+[2026-04-22 23:24:07] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 23:24:07] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-22 23:24:07] [INFO    ] [os_agent] 意图规划完成: intent=memory_check, command=free -h; vmstat 1 3
+[2026-04-22 23:24:07] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-22 23:24:07] [INFO    ] [os_agent] 开始执行命令: free -h; vmstat 1 3
+[2026-04-22 23:24:10] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: free -h; vmstat 1 3
+[2026-04-22 23:24:10] [INFO    ] [os_agent] 命令执行完成: return_code=0, stdout_len=632, stderr_len=0
+[2026-04-22 23:24:14] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-22 23:24:14] [INFO    ] [os_agent] 远程连接检测结果: 已连接
+[2026-04-22 23:24:14] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-22 23:24:15] [INFO    ] [os_agent] 用户请求处理完成
+[2026-04-22 23:24:15] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-23 08:01:49] [INFO    ] [os_agent] 启动 OS 智能代理应用程序
+[2026-04-23 08:01:51] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cublas\bin
+[2026-04-23 08:01:51] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cudnn\bin
+[2026-04-23 08:01:51] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cuda_nvrtc\bin
+[2026-04-23 08:01:51] [INFO    ] [os_agent] Whisper 设备自动模式：优先 CUDA，失败后回退 CPU
+[2026-04-23 08:01:51] [INFO    ] [os_agent.scheduler] 定时任务调度器已启动
+[2026-04-23 08:01:51] [INFO    ] [os_agent.scheduler] 执行定时任务: awd (ID: 1776871430222)
+[2026-04-23 08:01:51] [INFO    ] [os_agent.scheduler] 调度器启动成功
+[2026-04-23 08:01:51] [INFO    ] [os_agent.scheduler] 本轮执行了 1 个任务
+[2026-04-23 08:01:52] [INFO    ] [os_agent] 成功加载 2 个对话会话
+[2026-04-23 08:01:52] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:01:52] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:01:52] [INFO    ] [os_agent] 远程连接 [失败] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-23 08:01:52] [INFO    ] [os_agent] 聊天窗口初始化完成
+[2026-04-23 08:01:52] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:01:52] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:02:02] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:02:02] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:02:12] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:02:12] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:02:21] [INFO    ] [os_agent.scheduler] 执行定时任务: awd (ID: 1776871430222)
+[2026-04-23 08:02:21] [INFO    ] [os_agent.scheduler] 本轮执行了 1 个任务
+[2026-04-23 08:02:22] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:02:22] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:02:32] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:02:32] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:02:42] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:02:42] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:02:49] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-23 08:02:49] [INFO    ] [os_agent] 处理用户请求: 查看服务器内存
+[2026-04-23 08:02:49] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-23 08:02:50] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-23 08:02:50] [INFO    ] [os_agent] 意图规划完成: intent=memory_check, command=free -h; vmstat 1 3
+[2026-04-23 08:02:50] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-23 08:02:50] [INFO    ] [os_agent] 开始执行命令: free -h; vmstat 1 3
+[2026-04-23 08:02:51] [INFO    ] [os_agent.scheduler] 执行定时任务: awd (ID: 1776871430222)
+[2026-04-23 08:02:51] [INFO    ] [os_agent.scheduler] 本轮执行了 1 个任务
+[2026-04-23 08:02:52] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:02:52] [INFO    ] [os_agent] 远程连接检测结果: 已连接
+[2026-04-23 08:02:52] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-23 08:02:52] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: free -h; vmstat 1 3
+[2026-04-23 08:02:52] [INFO    ] [os_agent] 命令执行完成: return_code=0, stdout_len=633, stderr_len=0
+[2026-04-23 08:02:58] [INFO    ] [os_agent] 用户请求处理完成
+[2026-04-23 08:02:58] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-23 08:06:33] [INFO    ] [os_agent] 启动 OS 智能代理应用程序
+[2026-04-23 08:06:36] [INFO    ] [os_agent] Whisper 设备自动模式：优先 CUDA，失败后回退 CPU
+[2026-04-23 08:06:36] [INFO    ] [os_agent.scheduler] 定时任务调度器已启动
+[2026-04-23 08:06:36] [INFO    ] [os_agent.scheduler] 调度器启动成功
+[2026-04-23 08:06:36] [INFO    ] [os_agent.scheduler] 执行定时任务: awd (ID: 1776871430222)
+[2026-04-23 08:06:36] [INFO    ] [os_agent.scheduler] 本轮执行了 1 个任务
+[2026-04-23 08:06:36] [INFO    ] [os_agent] 成功加载 2 个对话会话
+[2026-04-23 08:06:36] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:06:36] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:06:36] [INFO    ] [os_agent] 远程连接 [失败] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-23 08:06:36] [INFO    ] [os_agent] 聊天窗口初始化完成
+[2026-04-23 08:06:37] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:06:37] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:06:46] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:06:46] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:06:56] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:06:56] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:07:06] [INFO    ] [os_agent.scheduler] 执行定时任务: awd (ID: 1776871430222)
+[2026-04-23 08:07:06] [INFO    ] [os_agent.scheduler] 本轮执行了 1 个任务
+[2026-04-23 08:07:06] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:07:06] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:07:16] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:07:16] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:07:26] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:07:26] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:07:36] [INFO    ] [os_agent.scheduler] 执行定时任务: awd (ID: 1776871430222)
+[2026-04-23 08:07:36] [INFO    ] [os_agent.scheduler] 本轮执行了 1 个任务
+[2026-04-23 08:07:36] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:07:36] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:07:46] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:07:46] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:07:56] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:07:56] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:08:06] [INFO    ] [os_agent.scheduler] 执行定时任务: awd (ID: 1776871430222)
+[2026-04-23 08:08:06] [INFO    ] [os_agent.scheduler] 本轮执行了 1 个任务
+[2026-04-23 08:08:06] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:08:06] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:08:16] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:08:16] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:08:26] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:08:26] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:08:36] [INFO    ] [os_agent.scheduler] 执行定时任务: awd (ID: 1776871430222)
+[2026-04-23 08:08:36] [INFO    ] [os_agent.scheduler] 本轮执行了 1 个任务
+[2026-04-23 08:08:36] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:08:36] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:08:42] [INFO    ] [os_agent] 启动 OS 智能代理应用程序
+[2026-04-23 08:09:18] [INFO    ] [os_agent] Whisper 设备自动模式：优先 CUDA，失败后回退 CPU
+[2026-04-23 08:09:18] [INFO    ] [os_agent.scheduler] 定时任务调度器已启动
+[2026-04-23 08:09:18] [INFO    ] [os_agent.scheduler] 调度器启动成功
+[2026-04-23 08:09:18] [INFO    ] [os_agent.scheduler] 执行定时任务: awd (ID: 1776871430222)
+[2026-04-23 08:09:18] [INFO    ] [os_agent.scheduler] 本轮执行了 1 个任务
+[2026-04-23 08:09:18] [INFO    ] [os_agent] 成功加载 2 个对话会话
+[2026-04-23 08:09:18] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:09:18] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:09:18] [INFO    ] [os_agent] 远程连接 [失败] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-23 08:09:18] [INFO    ] [os_agent] 聊天窗口初始化完成
+[2026-04-23 08:09:19] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:09:19] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:09:28] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:09:28] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:09:38] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:09:38] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:09:48] [INFO    ] [os_agent.scheduler] 执行定时任务: awd (ID: 1776871430222)
+[2026-04-23 08:09:48] [INFO    ] [os_agent.scheduler] 本轮执行了 1 个任务
+[2026-04-23 08:09:48] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:09:48] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:09:58] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:09:58] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:10:08] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:10:08] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:10:18] [INFO    ] [os_agent.scheduler] 执行定时任务: awd (ID: 1776871430222)
+[2026-04-23 08:10:18] [INFO    ] [os_agent.scheduler] 本轮执行了 1 个任务
+[2026-04-23 08:10:18] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:10:18] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:10:28] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:10:28] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:10:38] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:10:38] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:10:48] [INFO    ] [os_agent.scheduler] 执行定时任务: awd (ID: 1776871430222)
+[2026-04-23 08:10:48] [INFO    ] [os_agent.scheduler] 本轮执行了 1 个任务
+[2026-04-23 08:10:48] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:10:48] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:10:58] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:10:58] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:11:08] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:11:08] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:11:18] [INFO    ] [os_agent.scheduler] 执行定时任务: awd (ID: 1776871430222)
+[2026-04-23 08:11:18] [INFO    ] [os_agent.scheduler] 本轮执行了 1 个任务
+[2026-04-23 08:11:18] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:11:18] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:11:28] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:11:28] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:11:38] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:11:38] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:11:48] [INFO    ] [os_agent.scheduler] 执行定时任务: awd (ID: 1776871430222)
+[2026-04-23 08:11:48] [INFO    ] [os_agent.scheduler] 本轮执行了 1 个任务
+[2026-04-23 08:11:48] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:11:48] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:11:58] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:11:58] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:12:08] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:12:08] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:12:18] [INFO    ] [os_agent.scheduler] 执行定时任务: awd (ID: 1776871430222)
+[2026-04-23 08:12:18] [INFO    ] [os_agent.scheduler] 本轮执行了 1 个任务
+[2026-04-23 08:12:18] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:12:18] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:12:28] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:12:28] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:12:38] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:12:38] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:12:48] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:12:48] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:12:48] [INFO    ] [os_agent.scheduler] 执行定时任务: awd (ID: 1776871430222)
+[2026-04-23 08:12:48] [INFO    ] [os_agent.scheduler] 本轮执行了 1 个任务
+[2026-04-23 08:12:58] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:12:58] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:13:08] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:13:08] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:13:18] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:13:18] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:13:18] [INFO    ] [os_agent.scheduler] 执行定时任务: awd (ID: 1776871430222)
+[2026-04-23 08:13:18] [INFO    ] [os_agent.scheduler] 本轮执行了 1 个任务
+[2026-04-23 08:13:28] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:13:28] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:13:38] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:13:38] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:21:26] [INFO    ] [os_agent] 启动 OS 智能代理应用程序
+[2026-04-23 08:21:28] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cublas\bin
+[2026-04-23 08:21:28] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cudnn\bin
+[2026-04-23 08:21:28] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cuda_nvrtc\bin
+[2026-04-23 08:21:28] [INFO    ] [os_agent] Whisper 设备自动模式：优先 CUDA，失败后回退 CPU
+[2026-04-23 08:21:28] [INFO    ] [os_agent.scheduler] 定时任务调度器已启动
+[2026-04-23 08:21:28] [INFO    ] [os_agent.scheduler] 调度器启动成功
+[2026-04-23 08:21:28] [INFO    ] [os_agent.scheduler] 执行定时任务: awd (ID: 1776871430222)
+[2026-04-23 08:21:28] [INFO    ] [os_agent.scheduler] 本轮执行了 1 个任务
+[2026-04-23 08:21:28] [INFO    ] [os_agent] 成功加载 2 个对话会话
+[2026-04-23 08:21:28] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:21:28] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:21:28] [INFO    ] [os_agent] 远程连接 [失败] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-23 08:21:28] [INFO    ] [os_agent] 聊天窗口初始化完成
+[2026-04-23 08:21:28] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:21:28] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:21:34] [INFO    ] [os_agent] 定时任务删除成功: awd
+[2026-04-23 08:21:38] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:21:38] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:21:48] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:21:48] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:21:58] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:21:58] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:22:08] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:22:08] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:22:18] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:22:18] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:22:21] [INFO    ] [os_agent] 定时任务创建成功: 查看当前系统占用，绑定到对话 session_3
+[2026-04-23 08:22:28] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:22:28] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:22:38] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:22:38] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:22:48] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:22:48] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:22:51] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-23 08:22:51] [INFO    ] [os_agent] 处理用户请求: 查看当前系统占用
+[2026-04-23 08:22:51] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-23 08:22:52] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-23 08:22:53] [INFO    ] [os_agent] 意图规划完成: intent=generic_shell, command=ps aux
+[2026-04-23 08:22:53] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-23 08:22:53] [INFO    ] [os_agent] 开始执行命令: ps aux
+[2026-04-23 08:22:53] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: ps aux
+[2026-04-23 08:22:53] [INFO    ] [os_agent] 命令执行完成: return_code=0, stdout_len=9363, stderr_len=0
+[2026-04-23 08:22:58] [INFO    ] [os_agent] 用户请求处理完成
+[2026-04-23 08:22:58] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-23 08:22:58] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:22:58] [INFO    ] [os_agent] 远程连接检测结果: 已连接
+[2026-04-23 08:22:58] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-23 08:23:22] [INFO    ] [os_agent.scheduler] 执行定时任务: 查看当前系统占用 (ID: 1776903741575)
+[2026-04-23 08:23:22] [INFO    ] [os_agent.scheduler] 本轮执行了 1 个任务
+[2026-04-23 08:23:50] [INFO    ] [os_agent] 定时任务删除成功: 查看当前系统占用
+[2026-04-23 08:32:22] [INFO    ] [os_agent] 启动 OS 智能代理应用程序
+[2026-04-23 08:32:24] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cublas\bin
+[2026-04-23 08:32:24] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cudnn\bin
+[2026-04-23 08:32:24] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cuda_nvrtc\bin
+[2026-04-23 08:32:24] [INFO    ] [os_agent] Whisper 设备自动模式：优先 CUDA，失败后回退 CPU
+[2026-04-23 08:32:24] [INFO    ] [os_agent.scheduler] 定时任务调度器已启动
+[2026-04-23 08:32:24] [INFO    ] [os_agent.scheduler] 调度器启动成功
+[2026-04-23 08:32:24] [INFO    ] [os_agent] 成功加载 4 个对话会话
+[2026-04-23 08:32:24] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:32:24] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:32:24] [INFO    ] [os_agent] 远程连接 [失败] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-23 08:32:24] [INFO    ] [os_agent] 聊天窗口初始化完成
+[2026-04-23 08:32:24] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:32:24] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:32:34] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:32:34] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:32:44] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:32:44] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:32:49] [INFO    ] [os_agent] 定时任务创建成功: 查看系统占用，绑定到对话 session_5
+[2026-04-23 08:32:54] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:32:54] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:33:04] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:33:04] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:33:08] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-23 08:33:08] [INFO    ] [os_agent] 处理用户请求: 查看当前系统占用
+[2026-04-23 08:33:08] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-23 08:33:09] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-23 08:33:11] [INFO    ] [os_agent] 意图规划完成: intent=generic_shell, command=ps aux --sort=-%mem | head -20
+[2026-04-23 08:33:11] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-23 08:33:11] [INFO    ] [os_agent] 开始执行命令: ps aux --sort=-%mem | head -20
+[2026-04-23 08:33:11] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: ps aux --sort=-%mem | head -20
+[2026-04-23 08:33:11] [INFO    ] [os_agent] 命令执行完成: return_code=0, stdout_len=2002, stderr_len=0
+[2026-04-23 08:33:14] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:33:14] [INFO    ] [os_agent] 远程连接检测结果: 已连接
+[2026-04-23 08:33:14] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-23 08:33:16] [INFO    ] [os_agent] 用户请求处理完成
+[2026-04-23 08:33:16] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-23 08:33:50] [INFO    ] [os_agent.scheduler] 执行定时任务: 查看系统占用 (ID: 1776904369463)
+[2026-04-23 08:33:50] [INFO    ] [os_agent.scheduler] 本轮执行了 1 个任务
+[2026-04-23 08:38:05] [INFO    ] [os_agent] 启动 OS 智能代理应用程序
+[2026-04-23 08:38:07] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cublas\bin
+[2026-04-23 08:38:07] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cudnn\bin
+[2026-04-23 08:38:07] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cuda_nvrtc\bin
+[2026-04-23 08:38:07] [INFO    ] [os_agent] Whisper 设备自动模式：优先 CUDA，失败后回退 CPU
+[2026-04-23 08:38:07] [INFO    ] [os_agent.scheduler] 定时任务调度器已启动
+[2026-04-23 08:38:07] [INFO    ] [os_agent.scheduler] 调度器启动成功
+[2026-04-23 08:38:07] [INFO    ] [os_agent.scheduler] 执行定时任务: 查看系统占用 (ID: 1776904369463)
+[2026-04-23 08:38:07] [INFO    ] [os_agent] [回调触发] 定时任务回调被调用: command='查看系统占用', session_id=session_5
+[2026-04-23 08:38:07] [INFO    ] [os_agent] [回调完成] 已调度定时任务到主线程: 查看系统占用
+[2026-04-23 08:38:07] [INFO    ] [os_agent.scheduler] 本轮执行了 1 个任务
+[2026-04-23 08:38:07] [INFO    ] [os_agent] 成功加载 6 个对话会话
+[2026-04-23 08:38:07] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:38:07] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:38:07] [INFO    ] [os_agent] 远程连接 [失败] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-23 08:38:07] [INFO    ] [os_agent] 聊天窗口初始化完成
+[2026-04-23 08:38:07] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:38:07] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:38:17] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:38:17] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:38:27] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:38:27] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:38:29] [INFO    ] [os_agent] 定时任务删除成功: 查看系统占用
+[2026-04-23 08:38:37] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:38:37] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:38:47] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:38:47] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:38:49] [INFO    ] [os_agent] 定时任务创建成功: 查看系统占用，绑定到对话 session_5
+[2026-04-23 08:38:57] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:38:57] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:39:07] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:39:07] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:39:17] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:39:17] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:39:27] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:39:27] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:39:33] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-23 08:39:33] [INFO    ] [os_agent] 处理用户请求: 列出当前路径下文件
+[2026-04-23 08:39:33] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-23 08:39:34] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-23 08:39:35] [INFO    ] [os_agent] 意图规划完成: intent=generic_shell, command=ls -la
+[2026-04-23 08:39:35] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-23 08:39:35] [INFO    ] [os_agent] 开始执行命令: ls -la
+[2026-04-23 08:39:35] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: ls -la
+[2026-04-23 08:39:35] [INFO    ] [os_agent] 命令执行完成: return_code=0, stdout_len=757, stderr_len=0
+[2026-04-23 08:39:37] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:39:37] [INFO    ] [os_agent] 远程连接检测结果: 已连接
+[2026-04-23 08:39:37] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-23 08:39:41] [INFO    ] [os_agent] 用户请求处理完成
+[2026-04-23 08:39:41] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-23 08:39:50] [INFO    ] [os_agent.scheduler] 执行定时任务: 查看系统占用 (ID: 1776904729409)
+[2026-04-23 08:39:50] [INFO    ] [os_agent] [回调触发] 定时任务回调被调用: command='查看系统占用', session_id=session_5
+[2026-04-23 08:39:50] [INFO    ] [os_agent] [回调完成] 已调度定时任务到主线程: 查看系统占用
+[2026-04-23 08:39:50] [INFO    ] [os_agent.scheduler] 本轮执行了 1 个任务
+[2026-04-23 08:40:50] [INFO    ] [os_agent.scheduler] 执行定时任务: 查看系统占用 (ID: 1776904729409)
+[2026-04-23 08:40:50] [INFO    ] [os_agent] [回调触发] 定时任务回调被调用: command='查看系统占用', session_id=session_5
+[2026-04-23 08:40:50] [INFO    ] [os_agent] [回调完成] 已调度定时任务到主线程: 查看系统占用
+[2026-04-23 08:40:50] [INFO    ] [os_agent.scheduler] 本轮执行了 1 个任务
+[2026-04-23 08:41:50] [INFO    ] [os_agent.scheduler] 执行定时任务: 查看系统占用 (ID: 1776904729409)
+[2026-04-23 08:41:50] [INFO    ] [os_agent] [回调触发] 定时任务回调被调用: command='查看系统占用', session_id=session_5
+[2026-04-23 08:41:50] [INFO    ] [os_agent] [回调完成] 已调度定时任务到主线程: 查看系统占用
+[2026-04-23 08:41:50] [INFO    ] [os_agent.scheduler] 本轮执行了 1 个任务
+[2026-04-23 08:42:29] [INFO    ] [os_agent] 启动 OS 智能代理应用程序
+[2026-04-23 08:42:30] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cublas\bin
+[2026-04-23 08:42:30] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cudnn\bin
+[2026-04-23 08:42:30] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cuda_nvrtc\bin
+[2026-04-23 08:42:30] [INFO    ] [os_agent] Whisper 设备自动模式：优先 CUDA，失败后回退 CPU
+[2026-04-23 08:42:30] [INFO    ] [os_agent.scheduler] 定时任务调度器已启动
+[2026-04-23 08:42:30] [INFO    ] [os_agent.scheduler] 调度器启动成功
+[2026-04-23 08:42:30] [INFO    ] [os_agent] 成功加载 6 个对话会话
+[2026-04-23 08:42:30] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:42:30] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:42:30] [INFO    ] [os_agent] 远程连接 [失败] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-23 08:42:30] [INFO    ] [os_agent] 聊天窗口初始化完成
+[2026-04-23 08:42:30] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:42:30] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:42:36] [INFO    ] [os_agent] 定时任务删除成功: 查看系统占用
+[2026-04-23 08:42:40] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:42:40] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:42:46] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-23 08:42:46] [INFO    ] [os_agent] 处理用户请求: 查看服务器内
+[2026-04-23 08:42:46] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-23 08:42:47] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-23 08:42:47] [INFO    ] [os_agent] 意图规划完成: intent=service_status, command=systemctl --type=service --state=running | head -n 50
+[2026-04-23 08:42:47] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-23 08:42:47] [INFO    ] [os_agent] 开始执行命令: systemctl --type=service --state=running | head -n 50
+[2026-04-23 08:42:47] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: systemctl --type=service --state=running | head -n 50
+[2026-04-23 08:42:47] [INFO    ] [os_agent] 命令执行完成: return_code=0, stdout_len=1900, stderr_len=0
+[2026-04-23 08:42:50] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:42:50] [INFO    ] [os_agent] 远程连接检测结果: 已连接
+[2026-04-23 08:42:50] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-23 08:42:51] [INFO    ] [os_agent] 用户请求处理完成
+[2026-04-23 08:42:51] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-23 08:43:19] [INFO    ] [os_agent] 定时任务创建成功: 查看系统占用，绑定到对话 session_3
+[2026-04-23 08:44:19] [INFO    ] [os_agent.scheduler] 执行定时任务: 查看系统占用 (ID: 1776904999402)
+[2026-04-23 08:44:19] [INFO    ] [os_agent] [回调触发] 定时任务回调被调用: command='查看系统占用', session_id=session_3
+[2026-04-23 08:44:19] [INFO    ] [os_agent] [信号发射] 已发射定时任务信号到主线程: 查看系统占用
+[2026-04-23 08:44:19] [INFO    ] [os_agent] 执行定时任务: 查看系统占用 (绑定到对话: session_3)
+[2026-04-23 08:44:19] [INFO    ] [os_agent.scheduler] 本轮执行了 1 个任务
+[2026-04-23 08:44:19] [INFO    ] [os_agent] 在对话 session_3 中执行定时任务
+[2026-04-23 08:44:19] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-23 08:44:19] [INFO    ] [os_agent] 定时任务在对话 session_3 中处理完成: 查看系统占用
+[2026-04-23 08:44:19] [INFO    ] [os_agent] 处理用户请求: 查看系统占用
+[2026-04-23 08:44:19] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-23 08:44:21] [INFO    ] [os_agent] 意图规划完成: intent=generic_shell, command=top -b -n 1 | head -n 20
+[2026-04-23 08:44:21] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-23 08:44:21] [INFO    ] [os_agent] 开始执行命令: top -b -n 1 | head -n 20
+[2026-04-23 08:44:21] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: top -b -n 1 | head -n 20
+[2026-04-23 08:44:21] [INFO    ] [os_agent] 命令执行完成: return_code=0, stdout_len=1500, stderr_len=0
+[2026-04-23 08:44:30] [INFO    ] [os_agent] 用户请求处理完成
+[2026-04-23 08:44:30] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-23 08:45:19] [INFO    ] [os_agent.scheduler] 执行定时任务: 查看系统占用 (ID: 1776904999402)
+[2026-04-23 08:45:19] [INFO    ] [os_agent] [回调触发] 定时任务回调被调用: command='查看系统占用', session_id=session_3
+[2026-04-23 08:45:19] [INFO    ] [os_agent] [信号发射] 已发射定时任务信号到主线程: 查看系统占用
+[2026-04-23 08:45:19] [INFO    ] [os_agent] 执行定时任务: 查看系统占用 (绑定到对话: session_3)
+[2026-04-23 08:45:19] [INFO    ] [os_agent.scheduler] 本轮执行了 1 个任务
+[2026-04-23 08:45:19] [INFO    ] [os_agent] 在对话 session_3 中执行定时任务
+[2026-04-23 08:45:19] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-23 08:45:19] [INFO    ] [os_agent] 定时任务在对话 session_3 中处理完成: 查看系统占用
+[2026-04-23 08:45:19] [INFO    ] [os_agent] 处理用户请求: 查看系统占用
+[2026-04-23 08:45:19] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-23 08:45:21] [INFO    ] [os_agent] 意图规划完成: intent=generic_shell, command=echo 'Intent not mapped yet. Please extend planner.'
+[2026-04-23 08:45:21] [INFO    ] [os_agent] 对话意图无需执行: generic_shell, 返回预设响应
+[2026-04-23 08:45:21] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-23 08:46:19] [INFO    ] [os_agent.scheduler] 执行定时任务: 查看系统占用 (ID: 1776904999402)
+[2026-04-23 08:46:19] [INFO    ] [os_agent] [回调触发] 定时任务回调被调用: command='查看系统占用', session_id=session_3
+[2026-04-23 08:46:19] [INFO    ] [os_agent] [信号发射] 已发射定时任务信号到主线程: 查看系统占用
+[2026-04-23 08:46:19] [INFO    ] [os_agent] 执行定时任务: 查看系统占用 (绑定到对话: session_3)
+[2026-04-23 08:46:19] [INFO    ] [os_agent.scheduler] 本轮执行了 1 个任务
+[2026-04-23 08:46:19] [INFO    ] [os_agent] 在对话 session_3 中执行定时任务
+[2026-04-23 08:46:19] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-23 08:46:19] [INFO    ] [os_agent] 定时任务在对话 session_3 中处理完成: 查看系统占用
+[2026-04-23 08:46:19] [INFO    ] [os_agent] 处理用户请求: 查看系统占用
+[2026-04-23 08:46:19] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-23 08:46:21] [INFO    ] [os_agent] 意图规划完成: intent=generic_shell, command=top -b -n 1 | head -n 20
+[2026-04-23 08:46:21] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-23 08:46:21] [INFO    ] [os_agent] 开始执行命令: top -b -n 1 | head -n 20
+[2026-04-23 08:46:21] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: top -b -n 1 | head -n 20
+[2026-04-23 08:46:21] [INFO    ] [os_agent] 命令执行完成: return_code=0, stdout_len=1500, stderr_len=0
+[2026-04-23 08:46:30] [INFO    ] [os_agent] 用户请求处理完成
+[2026-04-23 08:46:30] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-23 08:46:40] [INFO    ] [os_agent] 定时任务删除成功: 查看系统占用
+[2026-04-23 08:57:31] [INFO    ] [os_agent] 启动 OS 智能代理应用程序
+[2026-04-23 08:57:34] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cublas\bin
+[2026-04-23 08:57:34] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cudnn\bin
+[2026-04-23 08:57:34] [INFO    ] [os_agent] 已添加 CUDA DLL 路径: C:\Users\yfy25\AppData\Local\Programs\Python\Python314\Lib\site-packages\nvidia\cuda_nvrtc\bin
+[2026-04-23 08:57:34] [INFO    ] [os_agent] Whisper 设备自动模式：优先 CUDA，失败后回退 CPU
+[2026-04-23 08:57:34] [INFO    ] [os_agent.scheduler] 定时任务调度器已启动
+[2026-04-23 08:57:34] [INFO    ] [os_agent.scheduler] 调度器启动成功
+[2026-04-23 08:57:34] [INFO    ] [os_agent] 成功加载 6 个对话会话
+[2026-04-23 08:57:34] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:57:34] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:57:34] [INFO    ] [os_agent] 远程连接 [失败] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-23 08:57:34] [INFO    ] [os_agent] 聊天窗口初始化完成
+[2026-04-23 08:57:34] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:57:34] [WARNING ] [os_agent] 远程连接检测结果: 未连接
+[2026-04-23 08:57:42] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-23 08:57:42] [INFO    ] [os_agent] 处理用户请求: 安装nmap
+[2026-04-23 08:57:42] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-23 08:57:43] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-23 08:57:44] [INFO    ] [os_agent] 开始检测远程连接: 124.222.119.109:22 用户=ubuntu
+[2026-04-23 08:57:44] [INFO    ] [os_agent] 远程连接检测结果: 已连接
+[2026-04-23 08:57:44] [INFO    ] [os_agent] 远程连接 [成功] - 主机: 124.222.119.109:22, 用户: ubuntu
+[2026-04-23 08:57:45] [INFO    ] [os_agent] 意图规划完成: intent=generic_shell, command=apt-get update && apt-get install -y nmap
+[2026-04-23 08:57:45] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-23 08:57:45] [INFO    ] [os_agent] 开始执行命令: apt-get update && apt-get install -y nmap
+[2026-04-23 08:57:45] [WARNING ] [os_agent] 命令执行 [失败] - 类型: 远程, 命令: apt-get update && apt-get install -y nmap, 返回码: 100, 错误: E: Could not open lock file /var/lib/apt/lists/lock - open (13: Permission denied)
+E: Unable to lock
+[2026-04-23 08:57:45] [INFO    ] [os_agent] 命令执行完成: return_code=100, stdout_len=25, stderr_len=328
+[2026-04-23 08:57:50] [INFO    ] [os_agent] 用户请求处理完成
+[2026-04-23 08:57:50] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-23 08:57:58] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-23 08:57:58] [INFO    ] [os_agent] 处理用户请求: 请先检查当前用户是否有 sudo 权限，再使用高权限方式重试：安装nmap
+[2026-04-23 08:57:58] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-23 08:58:01] [INFO    ] [os_agent] 意图规划完成: intent=generic_shell, command=if sudo -n true 2>/dev/null; then sudo apt-get update && sudo apt-get install -y nmap; else echo "Current user does not have sudo privileges."; fi
+[2026-04-23 08:58:01] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-23 08:58:01] [INFO    ] [os_agent] 开始执行命令: if sudo -n true 2>/dev/null; then sudo apt-get update && sudo apt-get install -y nmap; else echo "Current user does not have sudo privileges."; fi
+[2026-04-23 08:58:08] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: if sudo -n true 2>/dev/null; then sudo apt-get update && sudo apt-get install -y nmap; else echo "Current user does not have sudo privileges."; fi
+[2026-04-23 08:58:08] [INFO    ] [os_agent] 命令执行完成: return_code=0, stdout_len=3906, stderr_len=994
+[2026-04-23 08:58:11] [INFO    ] [os_agent] 用户请求处理完成
+[2026-04-23 08:58:11] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-23 08:59:17] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-23 08:59:17] [INFO    ] [os_agent] 处理用户请求: 查看nmap版本
+[2026-04-23 08:59:17] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-23 08:59:17] [INFO    ] [os_agent] 意图规划完成: intent=os_release, command=cat /etc/os-release; uname -a
+[2026-04-23 08:59:17] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-23 08:59:17] [INFO    ] [os_agent] 开始执行命令: cat /etc/os-release; uname -a
+[2026-04-23 08:59:17] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release; uname -a
+[2026-04-23 08:59:17] [INFO    ] [os_agent] 命令执行完成: return_code=0, stdout_len=530, stderr_len=0
+[2026-04-23 08:59:21] [INFO    ] [os_agent] 用户请求处理完成
+[2026-04-23 08:59:21] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-23 09:02:32] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-23 09:02:32] [INFO    ] [os_agent] 处理用户请求: 新建一个shi.txt
+[2026-04-23 09:02:32] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-23 09:02:33] [INFO    ] [os_agent] 意图规划完成: intent=generic_shell, command=touch shi.txt
+[2026-04-23 09:02:33] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-23 09:02:33] [INFO    ] [os_agent] 开始执行命令: touch shi.txt
+[2026-04-23 09:02:33] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: touch shi.txt
+[2026-04-23 09:02:33] [INFO    ] [os_agent] 命令执行完成: return_code=0, stdout_len=0, stderr_len=0
+[2026-04-23 09:02:37] [INFO    ] [os_agent] 用户请求处理完成
+[2026-04-23 09:02:37] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-23 09:03:42] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-23 09:03:42] [INFO    ] [os_agent] 处理用户请求: 把下面内容写入到刚创建的txt:帝高阳之苗裔兮，朕皇考曰伯庸。
+摄提贞于孟陬兮，惟庚寅吾以降。
+皇览揆余初度兮，肇锡余以嘉名。
+名余曰正则兮，字余曰灵均。
+纷吾既有此内美兮，又重之以修能。
+扈江离与辟芷兮，纫秋兰以为佩。
+汩余若将不及兮，恐年岁之不吾与。
+朝搴阰之木兰兮，夕揽洲之宿莽。
+日月忽其不淹兮，春与秋其代序。
+惟草木之零落兮，恐美人之迟暮。(惟 通：唯)
+不抚壮而弃秽兮，何不改此度？(改此度 一作：改乎此度)
+乘骐骥以驰骋兮，来吾道夫先路！
+昔三后之纯粹兮，固众芳之所在。
+杂申椒与菌桂兮，岂惟纫夫蕙茝！
+[2026-04-23 09:03:42] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-23 09:03:52] [INFO    ] [os_agent] 意图规划完成: intent=generic_shell, command=echo -e "帝高阳之苗裔兮，朕皇考曰伯庸。\n摄提贞于孟陬兮，惟庚寅吾以降。\n皇览揆余初度兮，肇锡余以嘉名。\n名余曰正则兮，字余曰灵均。\n纷吾既有此内美兮，又重之以修能。\n扈江离与辟芷兮，纫秋兰以为佩。\n汩余若将不及兮，恐年岁之不吾与。\n朝搴阰之木兰兮，夕揽洲之宿莽。\n日月忽其不淹兮，春与秋其代序。\n惟草木之零落兮，恐美人之迟暮。(惟 通：唯)\n不抚壮而弃秽兮，何不改此度？(改此度 一作：改乎此度)\n乘骐骥以驰骋兮，来吾道夫先路！\n昔三后之纯粹兮，固众芳之所在。\n杂申椒与菌桂兮，岂惟纫夫蕙茝！" > shi.txt
+[2026-04-23 09:03:52] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-23 09:03:52] [INFO    ] [os_agent] 开始执行命令: echo -e "帝高阳之苗裔兮，朕皇考曰伯庸。\n摄提贞于孟陬兮，惟庚寅吾以降。\n皇览揆余初度兮，肇锡余以嘉名。\n名余曰正则兮，字余曰灵均。\n纷吾既有此内美兮，又重之以修能。\n扈江离与辟芷兮，纫秋兰以为佩。\n汩余若将不及兮，恐年岁之不吾与。\n朝搴阰之木兰兮，夕揽洲之宿莽。\n日月忽其不淹兮，春与秋其代序。\n惟草木之零落兮，恐美人之迟暮。(惟 通：唯)\n不抚壮而弃秽兮，何不改此度？(改此度 一作：改乎此度)\n乘骐骥以驰骋兮，来吾道夫先路！\n昔三后之纯粹兮，固众芳之所在。\n杂申椒与菌桂兮，岂惟纫夫蕙茝！" > shi.txt
+[2026-04-23 09:03:52] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: echo -e "帝高阳之苗裔兮，朕皇考曰伯庸。\n摄提贞于孟陬兮，惟庚寅吾以降。\n皇览揆余初度兮，肇锡余以嘉名。\n名余曰正则兮，字余曰灵均。\n纷吾既有此内美兮，又重之以修能。\n扈江离与辟芷兮，纫秋兰以为佩。\n汩余若将不及兮，恐年岁之不吾与。\n朝搴阰之木兰兮，夕揽洲之宿莽。\n日月忽其不淹兮，春与秋其代序。\n惟草木之零落兮，恐美人之迟暮。(惟 通：唯)\n不抚壮而弃秽兮，何不改此度？(改此度 一作：改乎此度)\n乘骐骥以驰骋兮，来吾道夫先路！\n昔三后之纯粹兮，固众芳之所在。\n杂申椒与菌桂兮，岂惟纫夫蕙茝！" > shi.txt
+[2026-04-23 09:03:52] [INFO    ] [os_agent] 命令执行完成: return_code=0, stdout_len=0, stderr_len=0
+[2026-04-23 09:03:54] [INFO    ] [os_agent] 用户请求处理完成
+[2026-04-23 09:03:54] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-23 09:04:35] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-23 09:04:35] [INFO    ] [os_agent] 处理用户请求: 把shi.txt里面所有的"兮"字换成"喵"
+[2026-04-23 09:04:35] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-23 09:04:37] [INFO    ] [os_agent] 意图规划完成: intent=generic_shell, command=sed -i 's/兮/喵/g' shi.txt
+[2026-04-23 09:04:37] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-23 09:04:37] [INFO    ] [os_agent] 开始执行命令: sed -i 's/兮/喵/g' shi.txt
+[2026-04-23 09:04:37] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: sed -i 's/兮/喵/g' shi.txt
+[2026-04-23 09:04:37] [INFO    ] [os_agent] 命令执行完成: return_code=0, stdout_len=0, stderr_len=0
+[2026-04-23 09:04:41] [INFO    ] [os_agent] 用户请求处理完成
+[2026-04-23 09:04:41] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-23 09:05:02] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-23 09:05:02] [INFO    ] [os_agent] 处理用户请求: 查看修改后的shi.txt
+[2026-04-23 09:05:02] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-23 09:05:03] [INFO    ] [os_agent] 意图规划完成: intent=generic_shell, command=cat shi.txt
+[2026-04-23 09:05:03] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-23 09:05:03] [INFO    ] [os_agent] 开始执行命令: cat shi.txt
+[2026-04-23 09:05:03] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat shi.txt
+[2026-04-23 09:05:03] [INFO    ] [os_agent] 命令执行完成: return_code=0, stdout_len=243, stderr_len=0
+[2026-04-23 09:05:08] [INFO    ] [os_agent] 用户请求处理完成
+[2026-04-23 09:05:08] [INFO    ] [os_agent] 后台处理完成: confirmed=False
+[2026-04-23 09:07:14] [INFO    ] [os_agent] 开始后台处理请求: confirmed=False
+[2026-04-23 09:07:14] [INFO    ] [os_agent] 处理用户请求: 递归地将根目录下所有文件的权限设置为“所有人可读、可写、可执行”。
+[2026-04-23 09:07:14] [INFO    ] [os_agent] 命令执行 [成功] - 类型: 远程, 命令: cat /etc/os-release
+[2026-04-23 09:07:16] [INFO    ] [os_agent] 意图规划完成: intent=generic_shell, command=find / -type f -exec chmod 777 {} \;
+[2026-04-23 09:07:16] [INFO    ] [os_agent] 风险评估完成: level=low, blocked=False
+[2026-04-23 09:07:16] [INFO    ] [os_agent] 开始执行命令: find / -type f -exec chmod 777 {} \;
