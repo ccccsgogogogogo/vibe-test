@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "operation_id": "op-20260421153731-3450b9a1",
+  "created_at": "2026-04-21T15:37:31",
+  "request": {
+    "user_text": "把1.txt和22.txt压缩到一个文件夹内",
+    "profile": "debian-family",
+    "intent": "generic_shell"
+  },
+  "target": {
+    "mode": "ssh",
+    "host": "124.222.119.109",
+    "port": 22
+  },
+  "operation": {
+    "command": "mkdir -p compressed_folder && cp 1.txt 22.txt compressed_folder/ 2>/dev/null || echo \"One or both files not found\"",
+    "timeout_seconds": 60,
+    "requires_confirmation": false
+  },
+  "risk": {
+    "level": "low",
+    "blocked": false,
+    "requires_confirmation": false,
+    "reason": "Allowed by default policy."
+  },
+  "status": "approved"
+}

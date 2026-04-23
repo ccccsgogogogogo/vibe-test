@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "operation_id": "op-20260421145649-ca1665e1",
+  "created_at": "2026-04-21T14:56:49",
+  "request": {
+    "user_text": "请先检查当前用户是否有 sudo 权限，再使用高权限方式重试：在/etc目录下搜索包含kdump的文件；",
+    "profile": "debian-family",
+    "intent": "generic_shell"
+  },
+  "target": {
+    "mode": "ssh",
+    "host": "124.222.119.109",
+    "port": 22
+  },
+  "operation": {
+    "command": "sudo -l >/dev/null 2>&1 && sudo find /etc -type f -exec grep -l \"kdump\" {} \\; 2>/dev/null || echo \"No sudo access or no matches found\"",
+    "timeout_seconds": 60,
+    "requires_confirmation": false
+  },
+  "risk": {
+    "level": "low",
+    "blocked": false,
+    "requires_confirmation": false,
+    "reason": "Allowed by default policy."
+  },
+  "status": "approved"
+}

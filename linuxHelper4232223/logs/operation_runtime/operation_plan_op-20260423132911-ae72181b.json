@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "operation_id": "op-20260423132911-ae72181b",
+  "created_at": "2026-04-23T13:29:11",
+  "request": {
+    "user_text": "写一个脚本不停地创建新进程直到系统满载",
+    "profile": "debian-family",
+    "intent": "process_list"
+  },
+  "target": {
+    "mode": "ssh",
+    "host": "124.222.119.109",
+    "port": 22
+  },
+  "operation": {
+    "command": "ps aux --sort=-%cpu | head -n 20",
+    "timeout_seconds": 60,
+    "requires_confirmation": false
+  },
+  "risk": {
+    "level": "low",
+    "blocked": false,
+    "requires_confirmation": false,
+    "reason": "LLM assessed: Read-only command that lists running processes sorted by CPU usage, no system modifications or destructive operations.",
+    "llm_score": 0.1,
+    "llm_reason": "Read-only command that lists running processes sorted by CPU usage, no system modifications or destructive operations.",
+    "action": "continue"
+  },
+  "status": "approved"
+}

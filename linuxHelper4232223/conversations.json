@@ -1,0 +1,118 @@
+{
+  "conversations": [
+    {
+      "name": "新对话",
+      "messages": [
+        {
+          "role": "User",
+          "text": "你好"
+        },
+        {
+          "role": "Assistant",
+          "text": "我还不能准确判断你的目标。请补充三个信息：操作对象、希望执行的动作、预期结果。"
+        }
+      ]
+    },
+    {
+      "name": "新对话 2",
+      "messages": [
+        {
+          "role": "User",
+          "text": "你好"
+        },
+        {
+          "role": "Assistant",
+          "text": "我还不能准确判断你的目标。请补充三个信息：操作对象、希望执行的动作、预期结果。"
+        },
+        {
+          "role": "User",
+          "text": "创建111.txt"
+        },
+        {
+          "role": "System",
+          "text": "__SYSTEM_COLLAPSIBLE__:{\"title\": \"意图理解\", \"details\": \"意图: generic_shell\\n我理解你的意思是：创建111.txt。\\n识别意图：generic_shell。\\n计划执行命令：echo > 111.txt\"}"
+        },
+        {
+          "role": "System",
+          "text": "__SYSTEM_COLLAPSIBLE__:{\"title\": \"操作计划\", \"details\": \"状态: approved\\n目标地址: 124.222.119.109\\n待执行指令: echo > 111.txt\\n文件路径: C:\\\\Users\\\\yfy25\\\\Desktop\\\\test\\\\linuxHelper4221550\\\\logs\\\\operation_runtime\\\\operation_plan_op-20260422165533-2e6fbf96.json\"}"
+        },
+        {
+          "role": "System",
+          "text": "__SYSTEM_COLLAPSIBLE__:{\"title\": \"执行结果\", \"details\": \"返回码: 0\\n简要概括: 执行成功，返回码 0。命令执行成功。\\n二次决策: normal\"}"
+        },
+        {
+          "role": "Assistant",
+          "text": "已创建空文件 `111.txt`。\n\n下一步建议：\n- 如需写入内容，可用 `echo \"内容\" > 111.txt`\n- 如需查看文件，可用 `cat 111.txt`\n- 如需编辑，可用 `vim 111.txt` 或 `nano 111.txt`"
+        },
+        {
+          "role": "User",
+          "text": "创建2222.txt"
+        },
+        {
+          "role": "System",
+          "text": "__SYSTEM_COLLAPSIBLE__:{\"title\": \"意图理解\", \"details\": \"意图: generic_shell\\n我理解你的意思是：创建2222.txt。\\n识别意图：generic_shell。\\n计划执行命令：echo > 2222.txt\"}"
+        },
+        {
+          "role": "System",
+          "text": "__SYSTEM_COLLAPSIBLE__:{\"title\": \"操作计划\", \"details\": \"状态: approved\\n目标地址: 124.222.119.109\\n待执行指令: echo > 2222.txt\\n文件路径: C:\\\\Users\\\\yfy25\\\\Desktop\\\\test\\\\linuxHelper4221550\\\\logs\\\\operation_runtime\\\\operation_plan_op-20260422165546-dea7d435.json\"}"
+        },
+        {
+          "role": "System",
+          "text": "__SYSTEM_COLLAPSIBLE__:{\"title\": \"执行结果\", \"details\": \"返回码: 0\\n简要概括: 执行成功，返回码 0。命令执行成功。\\n二次决策: normal\"}"
+        },
+        {
+          "role": "Assistant",
+          "text": "已创建空文件 2222.txt。\n\n建议下一步：可用 `ls -l 2222.txt` 查看文件属性，或用 `cat 2222.txt` 确认内容为空，或继续写入内容。"
+        },
+        {
+          "role": "User",
+          "text": "删除刚刚创建的倒数第二个文件"
+        },
+        {
+          "role": "System",
+          "text": "__SYSTEM_COLLAPSIBLE__:{\"title\": \"意图理解\", \"details\": \"意图: generic_shell\\n我理解你的意思是：删除刚刚创建的倒数第二个文件。\\n识别意图：generic_shell。\\n计划执行命令：rm \\\"$(ls -1t | head -2 | tail -1)\\\"\"}"
+        },
+        {
+          "role": "System",
+          "text": "__SYSTEM_COLLAPSIBLE__:{\"title\": \"操作计划\", \"details\": \"状态: approved\\n目标地址: 124.222.119.109\\n待执行指令: rm \\\"$(ls -1t | head -2 | tail -1)\\\"\\n文件路径: C:\\\\Users\\\\yfy25\\\\Desktop\\\\test\\\\linuxHelper4221550\\\\logs\\\\operation_runtime\\\\operation_plan_op-20260422165613-d98505ad.json\"}"
+        },
+        {
+          "role": "System",
+          "text": "__SYSTEM_COLLAPSIBLE__:{\"title\": \"执行结果\", \"details\": \"返回码: 0\\n简要概括: 执行成功，返回码 0。命令执行成功。\\n二次决策: normal\"}"
+        },
+        {
+          "role": "Assistant",
+          "text": "已成功删除倒数第二个创建的文件。当前目录下最近两个文件中的第二个已被移除。\n\n建议操作：\n- 如需确认删除结果，可运行 `ls -1t` 查看当前目录文件列表（按时间排序）。\n- 若想删除其他文件，可指定文件名或路径。\n- 注意：该命令依赖文件名排序，若文件包含空格或特殊字符可能出错。"
+        },
+        {
+          "role": "User",
+          "text": "查看当前路径下的文件"
+        },
+        {
+          "role": "System",
+          "text": "__SYSTEM_COLLAPSIBLE__:{\"title\": \"意图理解\", \"details\": \"意图: generic_shell\\n我理解你的意思是：查看当前路径下的文件。\\n识别意图：generic_shell。\\n计划执行命令：ls -la\"}"
+        },
+        {
+          "role": "System",
+          "text": "__SYSTEM_COLLAPSIBLE__:{\"title\": \"操作计划\", \"details\": \"状态: approved\\n目标地址: 124.222.119.109\\n待执行指令: ls -la\\n文件路径: C:\\\\Users\\\\yfy25\\\\Desktop\\\\test\\\\linuxHelper4221550\\\\logs\\\\operation_runtime\\\\operation_plan_op-20260422165636-b398ace1.json\"}"
+        },
+        {
+          "role": "System",
+          "text": "__SYSTEM_COLLAPSIBLE__:{\"title\": \"执行结果\", \"details\": \"返回码: 0\\n简要概括: 执行成功，返回码 0。total 64\\ndrwxr-x--- 8 ubuntu ubuntu 4096 Apr 22 16:56 .\\ndrwxr-xr-x 4 root   root   4096 Apr 17 14:27 ..\\n-rw-rw-r-- 1 ubu\\n二次决策: normal\"}"
+        },
+        {
+          "role": "Assistant",
+          "text": "当前目录下有以下内容：\n- 一个普通文件：`2222.txt`\n- 一个中文文件夹：`文件夹TEST`\n- 一个英文文件夹：`compressed_folder`\n- 以及多个隐藏文件/目录（以`.`开头，如`.bashrc`, `.ssh`等）\n\n建议下一步操作：\n- 查看文件内容：`cat 2222.txt`\n- 进入文件夹：`cd 文件夹TEST` 或 `cd compressed_folder`\n\n命令原始输出（节选）：\nstdout:\ntotal 64\ndrwxr-x--- 8 ubuntu ubuntu 4096 Apr 22 16:56 .\ndrwxr-xr-x 4 root   root   4096 Apr 17 14:27 ..\n-rw-rw-r-- 1 ubuntu ubuntu    1 Apr 22 16:55 2222.txt\n-rw------- 1 ubuntu ubuntu  320 Apr 22 15:30 .bash_history\n-rw-r--r-- 1 ubuntu ubuntu  220 Mar 31  2024 .bash_logout\n-rw-r--r-- 1 ubuntu ubuntu 3771 Mar 31  2024 .bashrc\ndrwx------ 2 ubuntu ubuntu 4096 Apr 17 14:31 .cache\ndrwxrwxr-x 2 ubuntu ubuntu 4096 Apr 21 15:37 compressed_folder\ndrwx------ 3 ubuntu ubuntu 4096 Apr 21 22:44 .config\n-rw-r--r-- 1 ubuntu ubuntu  807 Mar 31  2024 .profile\ndrwx------ 2 ubuntu ubuntu 4096 Apr 17 14:27 .ssh\ndrwxr-xr-x 2 ubuntu ubuntu 4096 Apr 20 18:10 .vim\n-rw------- 1 ubuntu ubuntu 8261 Apr 22 15:21 .viminfo\ndrwxrwxr-x 2 ubuntu ubuntu 4096 Apr 20 18:07 文件夹TEST"
+        }
+      ]
+    },
+    {
+      "name": "新对话 3",
+      "messages": []
+    },
+    {
+      "name": "新对话 4",
+      "messages": []
+    }
+  ]
+}
