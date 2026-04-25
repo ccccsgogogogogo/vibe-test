@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "operation_id": "op-20260423132637-1c9a5e26",
+  "created_at": "2026-04-23T13:26:37",
+  "request": {
+    "user_text": "递归地将根目录下所有文件的权限设置为“所有人可读、可写、可执行”。",
+    "profile": "debian-family",
+    "intent": "generic_shell"
+  },
+  "target": {
+    "mode": "ssh",
+    "host": "124.222.119.109",
+    "port": 22
+  },
+  "operation": {
+    "command": "find / -type f -exec chmod 777 {} \\;",
+    "timeout_seconds": 60,
+    "requires_confirmation": false
+  },
+  "risk": {
+    "level": "critical",
+    "blocked": true,
+    "requires_confirmation": false,
+    "reason": "LLM assessed: This command recursively finds all files on the entire system and changes their permissions to 777 (read/write/execute for everyone). This is extremely dangerous as it removes all security restrictions, potentially exposing sensitive files and making the system vulnerable to attacks.",
+    "llm_score": 0.95,
+    "llm_reason": "This command recursively finds all files on the entire system and changes their permissions to 777 (read/write/execute for everyone). This is extremely dangerous as it removes all security restrictions, potentially exposing sensitive files and making the system vulnerable to attacks.",
+    "action": "block"
+  },
+  "status": "blocked"
+}

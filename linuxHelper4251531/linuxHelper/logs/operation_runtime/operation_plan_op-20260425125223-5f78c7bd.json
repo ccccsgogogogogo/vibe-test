@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "operation_id": "op-20260425125223-5f78c7bd",
+  "created_at": "2026-04-25T12:52:23",
+  "request": {
+    "user_text": "查看系统占用",
+    "profile": "debian-family",
+    "intent": "generic_shell"
+  },
+  "target": {
+    "mode": "ssh",
+    "host": "124.222.119.109",
+    "port": 22
+  },
+  "operation": {
+    "command": "top -b -n1 | head -20",
+    "timeout_seconds": 60,
+    "requires_confirmation": false
+  },
+  "risk": {
+    "level": "low",
+    "blocked": false,
+    "requires_confirmation": false,
+    "reason": "LLM assessed: Read-only command that displays system process information. No modifications or destructive operations.",
+    "llm_score": 0.0,
+    "llm_reason": "Read-only command that displays system process information. No modifications or destructive operations.",
+    "action": "continue"
+  },
+  "status": "approved"
+}

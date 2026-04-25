@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "operation_id": "op-20260425132438-1c7bf5b6",
+  "created_at": "2026-04-25T13:24:38",
+  "request": {
+    "user_text": "查看当前用户所在组",
+    "profile": "debian-family",
+    "intent": "generic_shell"
+  },
+  "target": {
+    "mode": "ssh",
+    "host": "124.222.119.109",
+    "port": 22
+  },
+  "operation": {
+    "command": "groups",
+    "timeout_seconds": 60,
+    "requires_confirmation": false
+  },
+  "risk": {
+    "level": "low",
+    "blocked": false,
+    "requires_confirmation": false,
+    "reason": "LLM assessed: The 'groups' command is a read-only command that shows group memberships for the current user, posing no risk to the system.",
+    "llm_score": 0.0,
+    "llm_reason": "The 'groups' command is a read-only command that shows group memberships for the current user, posing no risk to the system.",
+    "action": "continue"
+  },
+  "status": "approved"
+}

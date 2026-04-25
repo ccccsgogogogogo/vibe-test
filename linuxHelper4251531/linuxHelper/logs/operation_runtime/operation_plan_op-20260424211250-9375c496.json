@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "operation_id": "op-20260424211250-9375c496",
+  "created_at": "2026-04-24T21:12:50",
+  "request": {
+    "user_text": "查看系统占用",
+    "profile": "debian-family",
+    "intent": "generic_shell"
+  },
+  "target": {
+    "mode": "ssh",
+    "host": "124.222.119.109",
+    "port": 22
+  },
+  "operation": {
+    "command": "du -sh /* 2>/dev/null | sort -rh | head -10; echo \"---\"; df -h / | awk 'NR==2{print \"总空间: \"$2, \"已用: \"$3, \"可用: \"$4, \"使用率: \"$5}'",
+    "timeout_seconds": 60,
+    "requires_confirmation": false
+  },
+  "risk": {
+    "level": "low",
+    "blocked": false,
+    "requires_confirmation": false,
+    "reason": "LLM assessed: This command performs read-only disk usage and filesystem space queries. It does not modify any files or system state.",
+    "llm_score": 0.1,
+    "llm_reason": "This command performs read-only disk usage and filesystem space queries. It does not modify any files or system state.",
+    "action": "continue"
+  },
+  "status": "approved"
+}

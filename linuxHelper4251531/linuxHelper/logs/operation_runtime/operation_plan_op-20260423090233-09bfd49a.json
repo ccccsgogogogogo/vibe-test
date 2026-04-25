@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "operation_id": "op-20260423090233-09bfd49a",
+  "created_at": "2026-04-23T09:02:33",
+  "request": {
+    "user_text": "新建一个shi.txt",
+    "profile": "debian-family",
+    "intent": "generic_shell"
+  },
+  "target": {
+    "mode": "ssh",
+    "host": "124.222.119.109",
+    "port": 22
+  },
+  "operation": {
+    "command": "touch shi.txt",
+    "timeout_seconds": 60,
+    "requires_confirmation": false
+  },
+  "risk": {
+    "level": "low",
+    "blocked": false,
+    "requires_confirmation": false,
+    "reason": "Allowed by default policy."
+  },
+  "status": "approved"
+}

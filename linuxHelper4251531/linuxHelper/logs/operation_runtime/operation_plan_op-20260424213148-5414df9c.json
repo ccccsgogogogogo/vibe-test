@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "operation_id": "op-20260424213148-5414df9c",
+  "created_at": "2026-04-24T21:31:48",
+  "request": {
+    "user_text": "查看当前系统占用",
+    "profile": "debian-family",
+    "intent": "generic_shell"
+  },
+  "target": {
+    "mode": "ssh",
+    "host": "124.222.119.109",
+    "port": 22
+  },
+  "operation": {
+    "command": "du -sh /* 2>/dev/null | sort -rh | head -20",
+    "timeout_seconds": 60,
+    "requires_confirmation": true
+  },
+  "risk": {
+    "level": "medium",
+    "blocked": false,
+    "requires_confirmation": true,
+    "reason": "LLM assessed: This command is read-only and not destructive, but it scans top-level directories with du, which can be resource-intensive on large systems and may reveal sensitive directory structures.",
+    "llm_score": 0.4,
+    "llm_reason": "This command is read-only and not destructive, but it scans top-level directories with du, which can be resource-intensive on large systems and may reveal sensitive directory structures.",
+    "action": "ask_user"
+  },
+  "status": "awaiting_confirmation"
+}

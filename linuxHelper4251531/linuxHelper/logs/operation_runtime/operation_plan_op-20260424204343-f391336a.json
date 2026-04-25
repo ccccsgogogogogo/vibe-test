@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "operation_id": "op-20260424204343-f391336a",
+  "created_at": "2026-04-24T20:43:43",
+  "request": {
+    "user_text": "安装ffmpeg包",
+    "profile": "debian-family",
+    "intent": "generic_shell"
+  },
+  "target": {
+    "mode": "ssh",
+    "host": "124.222.119.109",
+    "port": 22
+  },
+  "operation": {
+    "command": "apt update && apt install -y ffmpeg",
+    "timeout_seconds": 60,
+    "requires_confirmation": true
+  },
+  "risk": {
+    "level": "high",
+    "blocked": false,
+    "requires_confirmation": true,
+    "reason": "LLM assessed: Installing new packages (ffmpeg) with root privileges modifies the system and could introduce security risks or break dependencies. Requires user confirmation.",
+    "llm_score": 0.75,
+    "llm_reason": "Installing new packages (ffmpeg) with root privileges modifies the system and could introduce security risks or break dependencies. Requires user confirmation.",
+    "action": "ask_user"
+  },
+  "status": "awaiting_confirmation"
+}

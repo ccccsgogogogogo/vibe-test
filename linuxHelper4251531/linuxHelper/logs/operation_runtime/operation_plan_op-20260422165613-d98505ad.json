@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "operation_id": "op-20260422165613-d98505ad",
+  "created_at": "2026-04-22T16:56:13",
+  "request": {
+    "user_text": "删除刚刚创建的倒数第二个文件",
+    "profile": "debian-family",
+    "intent": "generic_shell"
+  },
+  "target": {
+    "mode": "ssh",
+    "host": "124.222.119.109",
+    "port": 22
+  },
+  "operation": {
+    "command": "rm \"$(ls -1t | head -2 | tail -1)\"",
+    "timeout_seconds": 60,
+    "requires_confirmation": false
+  },
+  "risk": {
+    "level": "low",
+    "blocked": false,
+    "requires_confirmation": false,
+    "reason": "Allowed by default policy."
+  },
+  "status": "approved"
+}

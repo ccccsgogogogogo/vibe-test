@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "operation_id": "op-20260425140625-33741a32",
+  "created_at": "2026-04-25T14:06:25",
+  "request": {
+    "user_text": "在/etc目录下搜索包含kdump的文件；\n\n在ls -R /etc命令的输出结果中筛选出包含kdump的内容。",
+    "profile": "debian-family",
+    "intent": "generic_shell"
+  },
+  "target": {
+    "mode": "ssh",
+    "host": "124.222.119.109",
+    "port": 22
+  },
+  "operation": {
+    "command": "grep -r 'kdump' /etc 2>/dev/null",
+    "timeout_seconds": 60,
+    "requires_confirmation": false
+  },
+  "risk": {
+    "level": "low",
+    "blocked": false,
+    "requires_confirmation": false,
+    "reason": "LLM assessed: Read-only search command that searches for 'kdump' in /etc files. No modifications to the system.",
+    "llm_score": 0.2,
+    "llm_reason": "Read-only search command that searches for 'kdump' in /etc files. No modifications to the system.",
+    "action": "continue"
+  },
+  "status": "approved"
+}

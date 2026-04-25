@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "operation_id": "op-20260425133114-aec6b5a7",
+  "created_at": "2026-04-25T13:31:14",
+  "request": {
+    "user_text": "检测当前linux是否具有zip应用",
+    "profile": "debian-family",
+    "intent": "generic_shell"
+  },
+  "target": {
+    "mode": "ssh",
+    "host": "124.222.119.109",
+    "port": 22
+  },
+  "operation": {
+    "command": "which zip 2>/dev/null || dpkg -s zip 2>/dev/null | grep -q 'Status: install ok installed' && echo 'zip is installed' || echo 'zip is not installed'",
+    "timeout_seconds": 60,
+    "requires_confirmation": false
+  },
+  "risk": {
+    "level": "low",
+    "blocked": false,
+    "requires_confirmation": false,
+    "reason": "LLM assessed: Command checks if zip is installed using which and dpkg, then echoes a status message. No system modification or destructive action.",
+    "llm_score": 0.1,
+    "llm_reason": "Command checks if zip is installed using which and dpkg, then echoes a status message. No system modification or destructive action.",
+    "action": "continue"
+  },
+  "status": "approved"
+}

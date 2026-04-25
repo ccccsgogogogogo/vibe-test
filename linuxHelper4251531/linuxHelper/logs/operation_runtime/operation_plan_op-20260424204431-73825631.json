@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "operation_id": "op-20260424204431-73825631",
+  "created_at": "2026-04-24T20:44:31",
+  "request": {
+    "user_text": "查看ffmpeg版本",
+    "profile": "debian-family",
+    "intent": "os_release"
+  },
+  "target": {
+    "mode": "ssh",
+    "host": "124.222.119.109",
+    "port": 22
+  },
+  "operation": {
+    "command": "cat /etc/os-release; uname -a",
+    "timeout_seconds": 60,
+    "requires_confirmation": false
+  },
+  "risk": {
+    "level": "low",
+    "blocked": false,
+    "requires_confirmation": false,
+    "reason": "LLM assessed: Read-only commands that display system information without any modification risk.",
+    "llm_score": 0.1,
+    "llm_reason": "Read-only commands that display system information without any modification risk.",
+    "action": "continue"
+  },
+  "status": "approved"
+}

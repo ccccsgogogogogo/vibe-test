@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "operation_id": "op-20260425112646-d324400d",
+  "created_at": "2026-04-25T11:26:46",
+  "request": {
+    "user_text": "告诉我脚本的代码是什么",
+    "profile": "debian-family",
+    "intent": "generic_shell"
+  },
+  "target": {
+    "mode": "ssh",
+    "host": "124.222.119.109",
+    "port": 22
+  },
+  "operation": {
+    "command": "cat /tmp/bfs_demo.py",
+    "timeout_seconds": 60,
+    "requires_confirmation": false
+  },
+  "risk": {
+    "level": "low",
+    "blocked": false,
+    "requires_confirmation": false,
+    "reason": "LLM assessed: Safe read-only command to display file contents, no modification risk.",
+    "llm_score": 0.1,
+    "llm_reason": "Safe read-only command to display file contents, no modification risk.",
+    "action": "continue"
+  },
+  "status": "approved"
+}
